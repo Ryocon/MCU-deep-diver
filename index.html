@@ -20,9 +20,16 @@
     <!-- flex for logo -->
     <img id="marvel-logo" class="p-2" width="200px" height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" alt="marvel logo"> 
     
-    <input type="text" name="search" id="user-input">
+    <input class="text-black" type="text" name="search" id="user-input">
+
+    <select class="m-2" name="search-parameters" id="search-params">
+        <option value="placeholder">Options</option>
+        <option  id="mcu-search" value="mcu">MCU</option>
+        <option value="comics">Comics</option>
+        <option value="events">Events</option>
+    </select>
     
-    <button id="search-btn" type="submit" class="m-2">search</button>
+    <button id="search-btn" type="submit" class="m-1">search</button>
 
 </div>
 
