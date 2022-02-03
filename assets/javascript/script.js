@@ -39,20 +39,28 @@ fetch(`http://gateway.marvel.com/v1/public/comics?apikey=${marvelKey}`)
 
 
 
-//  bespoke fetch functions for each of the search parameters
-function mcuFetcher() {
+// search button with event listener
+// the function that called the fetch functions based on search params will need to be called here
+searchBtn.addEventListener("click", (event)=>{
+        event.preventDefault();
+        mcuFetcher()
+    });
 
-    if (searchParameter.value === 'mcu') {
-        fetch(`http://www.omdbapi.com/?t=` + userInput + `&apikey=${omdbKey}`)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          console.log(data);
-        }
-        )
+
+//  bespoke fetch functions for each of the search parameters
+// will need a function to call the functions individually
+// each will make the cards
+// each will need the control loop
+function mcuFetcher() {
+    fetch(`http://www.omdbapi.com/?t=iron+man&apikey=${omdbKey}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
     }
-    
+    )
+
 }
 
 
