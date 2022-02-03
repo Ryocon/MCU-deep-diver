@@ -52,7 +52,7 @@ searchBtn.addEventListener("click", (event)=>{
 // each will make the cards
 // each will need the control loop
 function mcuFetcher() {
-    fetch(`http://www.omdbapi.com/?t=iron+man&apikey=${omdbKey}`)
+    fetch(`http://www.omdbapi.com/?t=${userInput}&apikey=${omdbKey}`)
     .then(function (response) {
       return response.json();
     })
