@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap');
+
+
+* {
+    background-color: #015975;
+    font-family: marvel;
+}
+
+#user-input {
+    background-color: white;
+}
+
+#search-btn {
+    
+        background: #ED1D24;
+        font-family: inherit;
+        padding: 0.6em 1.3em;
+        font-weight: 900;
+        font-size: 18px;
+        border: 3px solid black;
+        border-radius: 0.4em;
+        box-shadow: 0.1em 0.1em;
+       }
+       
+       button:hover {
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em;
+       }
+       
+       button:active {
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em;
+       
+       
+}

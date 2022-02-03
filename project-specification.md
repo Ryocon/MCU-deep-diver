@@ -22,3 +22,18 @@
 - combining all that OMDB MARVEL API information together into fancy card.
 - generate list of buttons below search of search history
 - If we display multiple chatacter info cards we would need to generate cards Dynamically rather than designing them in html then filling them in with the info dynamically generated. (like list of trop trump cards etc for comparison) - but thats extra work I think.
+
+
+
+
+## Updates
+- When I search a Marvel key term I select a parameter from a dropdown box
+- Film, TV Series, Comic, Event, Characters, Stories
+- Local storage used to go back to the last search made by the user (on the homepage)
+- Pages on desktop to load 9 cards at a time (animated)
+- Pages on mobile load 3
+- Cards will be bespoke in appending data pulled
+- Cards generated in JS and appended to HTML
+- Example Film - Title, Poster, Release date, short plot
+- Will need to implement a loop to prevent overloading the page (url query)
+- Load more button based on loop
