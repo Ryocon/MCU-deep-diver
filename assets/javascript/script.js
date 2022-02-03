@@ -18,5 +18,13 @@ fetch(`http://www.omdbapi.com/?t=iron+man&apikey=${omdbKey}`)
     )
 
 
+fetch(`http://gateway.marvel.com/v1/public/comics?apikey=${marvelKey}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    }
+    )
 
 
