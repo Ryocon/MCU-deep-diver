@@ -37,3 +37,5 @@
 - Example Film - Title, Poster, Release date, short plot
 - Will need to implement a loop to prevent overloading the page (url query)
 - Load more button based on loop
+
+- Will need to add ip to github for marvelapi to work
