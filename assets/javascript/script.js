@@ -14,6 +14,9 @@ var searchParameter = document.getElementById('search-params').value
 // search button call
 var searchBtn = document.getElementById('search-btn')
 
+// card page
+var cardPage = document.getElementById('card-page')
+
 
 
 // the queryurl below needs user input \/
@@ -46,6 +49,10 @@ searchBtn.addEventListener("click", (event)=>{
       const userSearch = userInput.value
       mcuFetcher(userSearch)
 
+    //   if statment based on search parameters
+    // search param value finder
+    // if value == mcu > mcufetcher
+
     });
 
 
@@ -61,6 +68,44 @@ function mcuFetcher(userSearch) {
     .then(function (data) {
       console.log(data);
      
+
+        
+        // Data pulling (nested within the .then function)
+ 
+        let moviePoster = data.Poster
+
+        let movieTitle = data.Title
+        console.log('Movie title: ' + movieTitle)
+
+        let releaseDate = data.Released
+        console.log('Release date: ' + releaseDate)
+
+        let moviePlot = data.Plot
+        console.log('Plot: ' + moviePlot)
+
+        // create
+
+
+        const moviePosterEl = document.createElement('img')
+        const movieTitleEl = document.createElement('h2')
+        const releaseDateEl = document.createElement('p')
+        const moviePlotEl = document.createElement('p')
+
+        // ammend
+
+        // moviePosterEl.setAttribute('src', `https://m.media-amazon.com/images/M/${moviePoster}.jpg`)
+
+        movieTitleEl.textContent(movieTitle)
+        releaseDateEl.textContent(releaseDate)
+        moviePlotEl.textContent(moviePlot)
+
+
+        // append
+
+        document.getElementById('card-page').appendChild(movieTitleEl, releaseDateEl, moviePlotEl)
+
+
+
     }
     )
 

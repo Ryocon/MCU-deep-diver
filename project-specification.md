@@ -39,3 +39,4 @@
 - Load more button based on loop
 
 - Will need to add ip to github for marvelapi to work
+- Create an array of acceptable search terms related to Marvel
