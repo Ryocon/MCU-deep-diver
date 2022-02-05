@@ -9,13 +9,14 @@ var marvelKey = "0265e94d30e0db384ca95fcdc7644186"
 var userInput = document.getElementById('user-input')
 
 // drop down menu for selective api searches
-var searchParameter = document.getElementById('search-params').value
+var searchParameter = document.getElementById('search-params')
 
 // search button call
 var searchBtn = document.getElementById('search-btn')
 
 // card page
 var cardPage = document.getElementById('card-page')
+
 
 
 
@@ -47,7 +48,22 @@ fetch(`http://gateway.marvel.com/v1/public/comics?apikey=${marvelKey}`)
 searchBtn.addEventListener("click", (event)=>{
         event.preventDefault();
       const userSearch = userInput.value
-      mcuFetcher(userSearch)
+
+      if (searchParameter.value === 'mcu') {
+        mcuFetcher(userSearch)
+      } else if (searchParameter.value === 'comics') {
+        //   function here
+      } else if (searchParameter.value === 'events') {
+          
+      }
+    //   function here
+      
+      else {
+          console.log('Please select an option!')
+          return
+      }
+
+      
 
     //   if statment based on search parameters
     // search param value finder
@@ -68,7 +84,7 @@ function mcuFetcher(userSearch) {
     .then(function (data) {
       console.log(data);
      
-
+    
         
         // Data pulling (nested within the .then function)
  
@@ -96,7 +112,6 @@ function mcuFetcher(userSearch) {
         // ammend
 
         moviePosterEl.setAttribute('src', moviePoster)
-
         movieTitleEl.textContent = 'Title: ' + movieTitle
         releaseDateEl.textContent = 'Release date: ' + releaseDate
         moviePlotEl.textContent = 'Plot: ' + moviePlot 
@@ -110,6 +125,10 @@ function mcuFetcher(userSearch) {
 
 
         
+
+        // make it clear the page after each search
+
+        // at some point store in local
 
     }
     )
