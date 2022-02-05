@@ -82,8 +82,6 @@ function mcuFetcher(userSearch) {
     .then(function (data) {
       console.log(data);
      
-    
-        
         // Data pulling (nested within the .then function)
  
         let moviePoster = data.Poster
@@ -129,16 +127,12 @@ function mcuFetcher(userSearch) {
 
         document.getElementById('card-page').appendChild(cardRender)
 
-
-        
-
         // make it clear the page after each search
 
         // at some point store in local
 
-    }
+        }
     )
-
 }
 
 

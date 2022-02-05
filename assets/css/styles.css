@@ -1,44 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap");
 
 * {
-    font-family: marvel;
-}
-
-body {
-    background-color: #015975;
+  background-color: #015975;
+  font-family: marvel;
+  color: white;
 }
 
 #user-input {
-    background-color: white;
+  background-color: white;
 }
 
-
-
 #search-btn {
-    
-        background: #ED1D24;
-        font-family: inherit;
-        padding: 0.6em 1.3em;
-        font-weight: 900;
-        font-size: 18px;
-        border: 3px solid black;
-        border-radius: 0.4em;
-        box-shadow: 0.1em 0.1em;
-       }
-       
-       button:hover {
-        transform: translate(-0.05em, -0.05em);
-        box-shadow: 0.15em 0.15em;
-       }
-       
-       button:active {
-        transform: translate(0.05em, 0.05em);
-        box-shadow: 0.05em 0.05em;
-       
-       
+  background: #ed1d24;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+
+.MDPlogo {
+  font-family: "Signika", sans-serif;
+  font-size: 1.5rem;
+  background: transparent;
+}
+
+/* .backButton {
+  font-family: "Signika", sans-serif;
+  font-size: 1.5rem;
+  background: transparent;
+  align-items: right;
+} */
+
+/* .MDPlogo a:hover {
+  color: white;
+  text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
+  transition: all 0.5s ease;
+} */
+
+
+/* header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 2%;
+  /* background-color: #ed1d24; */
+  /* background-image: linear-gradient(rgb(186, 61, 61), red);
+  /* border-radius: 0.5rem; */
+  /* flex-direction: row;
+} */ 
+
+.banner-area {
+  background-image: url("https://images3.alphacoders.com/232/thumb-1920-232145.jpg");
+  background-size: cover;
+  background-position: center center;
+  top: 100px;
+  height: 250px;
+  width: 100%;
+  /* margin-top: 3px; */
+  position: inherit;
+  opacity: 0.3;
+  border-radius: 0.5rem;
 }
