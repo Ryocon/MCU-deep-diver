@@ -85,7 +85,9 @@ function mcuFetcher(userSearch) {
 
         // create
 
-
+        // card div to put all data in
+        const cardRender = document.createElement('div')
+        
         const moviePosterEl = document.createElement('img')
         const movieTitleEl = document.createElement('h2')
         const releaseDateEl = document.createElement('p')
@@ -93,18 +95,21 @@ function mcuFetcher(userSearch) {
 
         // ammend
 
-        // moviePosterEl.setAttribute('src', `https://m.media-amazon.com/images/M/${moviePoster}.jpg`)
+        moviePosterEl.setAttribute('src', moviePoster)
 
-        movieTitleEl.textContent(movieTitle)
-        releaseDateEl.textContent(releaseDate)
-        moviePlotEl.textContent(moviePlot)
+        movieTitleEl.textContent = 'Title: ' + movieTitle
+        releaseDateEl.textContent = 'Release date: ' + releaseDate
+        moviePlotEl.textContent = 'Plot: ' + moviePlot 
 
 
         // append
 
-        document.getElementById('card-page').appendChild(movieTitleEl, releaseDateEl, moviePlotEl)
+        cardRender.append(moviePosterEl, movieTitleEl, releaseDateEl, moviePlotEl)
+
+        document.getElementById('card-page').appendChild(cardRender)
 
 
+        
 
     }
     )
