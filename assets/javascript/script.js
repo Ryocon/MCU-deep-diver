@@ -17,20 +17,14 @@ var searchBtn = document.getElementById('search-btn')
 // card page
 var cardPage = document.getElementById('card-page')
 
+// main page for removing + adding classes
+var mainPage = document.getElementById('main-page')
 
 
 
-// the queryurl below needs user input \/
-// fetch(`http://www.omdbapi.com/?t=iron+man&apikey=${omdbKey}`)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     }
-//     )
 
 
+// marvel api key
 fetch(`http://gateway.marvel.com/v1/public/comics?apikey=${marvelKey}`)
     .then(function (response) {
       return response.json();
@@ -49,12 +43,16 @@ searchBtn.addEventListener("click", (event)=>{
         event.preventDefault();
       const userSearch = userInput.value
 
+    //   mainPage.classList.add('hide')
+
       if (searchParameter.value === 'mcu') {
+        // removes main page elements NO ANIMATION !!!  
+        mainPage.remove()
         mcuFetcher(userSearch)
       } else if (searchParameter.value === 'comics') {
         //   function here
       } else if (searchParameter.value === 'events') {
-          
+
       }
     //   function here
       
@@ -109,9 +107,17 @@ function mcuFetcher(userSearch) {
         const releaseDateEl = document.createElement('p')
         const moviePlotEl = document.createElement('p')
 
+        cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
+        movieTitleEl.setAttribute('class', 'p-1 mt-2')
+        releaseDateEl.setAttribute('class', 'p-1')
+        moviePlotEl.setAttribute('class', 'p-1')
+
+
         // ammend
 
         moviePosterEl.setAttribute('src', moviePoster)
+        moviePosterEl.setAttribute('class', 'rounded-lg')
+
         movieTitleEl.textContent = 'Title: ' + movieTitle
         releaseDateEl.textContent = 'Release date: ' + releaseDate
         moviePlotEl.textContent = 'Plot: ' + moviePlot 

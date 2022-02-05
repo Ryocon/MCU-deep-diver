@@ -2,14 +2,18 @@
 
 
 * {
-    background-color: #015975;
     font-family: marvel;
-    color: white;
+}
+
+body {
+    background-color: #015975;
 }
 
 #user-input {
     background-color: white;
 }
+
+
 
 #search-btn {
     
