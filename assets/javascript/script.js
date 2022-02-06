@@ -24,18 +24,6 @@ var mainPage = document.getElementById('main-page')
 
 
 
-// marvel api key
-fetch(`http://gateway.marvel.com/v1/public/comics?apikey=${marvelKey}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    }
-    );
-
-
-
 
 // search button with event listener
 // the function that called the fetch functions based on search params will need to be called here
@@ -43,14 +31,14 @@ searchBtn.addEventListener("click", (event)=>{
         event.preventDefault();
       const userSearch = userInput.value
 
-    //   mainPage.classList.add('hide')
+        //   mainPage.classList.add('hide')
 
       if (searchParameter.value === 'mcu') {
         // removes main page elements NO ANIMATION !!!  
         mainPage.remove()
         mcuFetcher(userSearch)
       } else if (searchParameter.value === 'comics') {
-        //   function here
+        comics(userSearch);
       } else if (searchParameter.value === 'events') {
 
       }
@@ -82,6 +70,8 @@ function mcuFetcher(userSearch) {
     .then(function (data) {
       console.log(data);
      
+    
+        
         // Data pulling (nested within the .then function)
  
         let moviePoster = data.Poster
@@ -127,14 +117,31 @@ function mcuFetcher(userSearch) {
 
         document.getElementById('card-page').appendChild(cardRender)
 
+
+        
+
         // make it clear the page after each search
 
         // at some point store in local
 
-        }
+    }
     )
+
 }
 
+function comics(userSearch) {
+  fetch(`http://gateway.marvel.com/v1/public/characters?name=${userSearch}&apikey=${marvelKey}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      }
+      );
+    
+     
+    }
+  
 
 
 
