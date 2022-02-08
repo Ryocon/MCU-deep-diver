@@ -58,76 +58,138 @@ searchBtn.addEventListener("click", (event)=>{
     });
 
 
+
+
+// prototype fucntion for multiple film search cards
+function mcuFetcher(userSearch) {
+  fetch(`http://www.omdbapi.com/?s=${userSearch}&apikey=${omdbKey}`)
+  .then(function (response) {
+    return response.json()
+  })
+  .then(function (filmFetch) {
+    console.log(filmFetch)
+
+    var noOfIterations = Math.min(filmFetch.Search.length, 9)
+
+debugger
+        for(var i = 0; i < noOfIterations; i++) {
+          // currently doesn't like the search[i] bit below 
+          var film = filmFetch.search[i]
+
+
+          let filmPoster = film.Poster
+          let filmTitle = film.Title
+          let filmYear = film.Year
+
+          let cardRender = document.createElement('div')  
+          let filmPosterEl = document.createElement('img')
+          let filmTitleEl = document.createElement('h2')
+          let filmYearEl = document.createElement('p')
+
+          cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
+          filmPosterEl.setAttribute('class', 'p-1 mt-2')
+          filmTitleEl.setAttribute('class', 'p-1 mt-2')
+          filmYearEl.setAttribute('class', 'p-1 mt-2')
+
+
+          filmPosterEl.setAttribute('src', filmPoster)
+          filmPosterEl.setAttribute('class', 'rounded-lg')
+          filmTitleEl.textContent = 'Title: ' + filmTitle
+          filmYearEl.textContent = 'Release Year: ' + filmYear
+
+          cardRender.append(filmTitleEl, filmPosterEl, filmYearEl)
+
+          document.getElementById('card-page').appendChild(cardRender)
+
+
+        }
+
+
+
+
+
+    }
+  )
+}
+
+
+
+
+
+
+// COMMENTED OUT FUNCTIONING SINGLE SEARCH BELOW 
+
+
+
 //  bespoke fetch functions for each of the search parameters
 // will need a function to call the functions individually
 // each will make the cards
 // each will need the control loop
-function mcuFetcher(userSearch) {
-    fetch(`http://www.omdbapi.com/?t=${userSearch}&apikey=${omdbKey}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-     
-    
+// s generates a search for an array of results
+// function mcuFetcher(userSearch) {
+//     fetch(`http://www.omdbapi.com/?t=${userSearch}&apikey=${omdbKey}`)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
         
-        // Data pulling (nested within the .then function)
+//         // Data pulling (nested within the .then function)
  
-        let moviePoster = data.Poster
+//         let moviePoster = data.Poster
 
-        let movieTitle = data.Title
-        console.log('Movie title: ' + movieTitle)
+//         let movieTitle = data.Title
+//         console.log('Movie title: ' + movieTitle)
 
-        let releaseDate = data.Released
-        console.log('Release date: ' + releaseDate)
+//         let releaseDate = data.Released
+//         console.log('Release date: ' + releaseDate)
 
-        let moviePlot = data.Plot
-        console.log('Plot: ' + moviePlot)
+//         let moviePlot = data.Plot
+//         console.log('Plot: ' + moviePlot)
 
-        // create
+//         // create
 
-        // card div to put all data in
-        const cardRender = document.createElement('div')
+//         // card div to put all data in
+//         const cardRender = document.createElement('div')
         
-        const moviePosterEl = document.createElement('img')
-        const movieTitleEl = document.createElement('h2')
-        const releaseDateEl = document.createElement('p')
-        const moviePlotEl = document.createElement('p')
+//         const moviePosterEl = document.createElement('img')
+//         const movieTitleEl = document.createElement('h2')
+//         const releaseDateEl = document.createElement('p')
+//         const moviePlotEl = document.createElement('p')
 
-        cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
-        movieTitleEl.setAttribute('class', 'p-1 mt-2')
-        releaseDateEl.setAttribute('class', 'p-1')
-        moviePlotEl.setAttribute('class', 'p-1')
-
-
-        // ammend
-
-        moviePosterEl.setAttribute('src', moviePoster)
-        moviePosterEl.setAttribute('class', 'rounded-lg')
-
-        movieTitleEl.textContent = 'Title: ' + movieTitle
-        releaseDateEl.textContent = 'Release date: ' + releaseDate
-        moviePlotEl.textContent = 'Plot: ' + moviePlot 
+//         cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
+//         movieTitleEl.setAttribute('class', 'p-1 mt-2')
+//         releaseDateEl.setAttribute('class', 'p-1')
+//         moviePlotEl.setAttribute('class', 'p-1')
 
 
-        // append
+//         // ammend
 
-        cardRender.append(moviePosterEl, movieTitleEl, releaseDateEl, moviePlotEl)
+//         moviePosterEl.setAttribute('src', moviePoster)
+//         moviePosterEl.setAttribute('class', 'rounded-lg')
 
-        document.getElementById('card-page').appendChild(cardRender)
+//         movieTitleEl.textContent = 'Title: ' + movieTitle
+//         releaseDateEl.textContent = 'Release date: ' + releaseDate
+//         moviePlotEl.textContent = 'Plot: ' + moviePlot 
+
+
+//         // append
+
+//         cardRender.append(moviePosterEl, movieTitleEl, releaseDateEl, moviePlotEl)
+
+//         document.getElementById('card-page').appendChild(cardRender)
 
 
         
 
-        // make it clear the page after each search
+//         // make it clear the page after each search
 
-        // at some point store in local
+//         // at some point store in local
 
-    }
-    )
+//     }
+//   )
 
-}
+// }
 
 // THIS FINDS THE CHARACTER ID AND PARSES IT INTO THE comicFetcher function
 function comics(userSearch) {
