@@ -136,12 +136,53 @@ function comics(userSearch) {
       })
       .then(function (data) {
         console.log(data);
+
+
+        // data
+        // let comicCover = data.Poster
+
+        let comicTitle = data.results.comics.items[0].name
+        console.log('Comic title: ' + comicTitle)
+
+        // let comicDate = data.Released
+        // console.log('Release date: ' + comicDate)
+
+        // let storySum = data.Plot
+        // console.log('Story Summary: ' + storySum)
+
+
+        // render
+        const cardRender = document.createElement('div')
+        
+        const comicCoverEl = document.createElement('img')
+        const comicTitleEl = document.createElement('h2')
+        const comicDateEl = document.createElement('p')
+        const storySumEl = document.createElement('p')
+
+        cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
+        comicTitleEl.setAttribute('class', 'p-1 mt-2')
+        comicDateEl.setAttribute('class', 'p-1')
+        storySumEl.setAttribute('class', 'p-1')
+
+        comicCoverEl.setAttribute('src', comicCover)
+        comicCoverEl.setAttribute('class', 'rounded-lg')
+
+        
+        // appender
+        cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')        
+
+        comicTitleEl.textContent = 'Title: ' + comicTitle
+
+        cardRender.append(comicTitleEl)
+        document.getElementById('card-page').appendChild(cardRender)
+
       }
       );
     
      
     }
   
+
 
 
 
