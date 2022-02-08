@@ -137,18 +137,29 @@ function comics(userSearch) {
       .then(function (data) {
         console.log(data);
 
+debugger
+
+        // var for comicdata (so it stops being data.data)
+        let comicData = data
 
         // data
-        // let comicCover = data.Poster
+        var noResults = comicData.data.results.length === 0;
 
-        let comicTitle = data.results.comics.items[0].name
+        if (noResults) {
+          console.log('Why does spiderman not work?')
+          return
+        }
+
+        let comicTitle = data.data.results[0].comics.items[0].name
         console.log('Comic title: ' + comicTitle)
 
-        // let comicDate = data.Released
-        // console.log('Release date: ' + comicDate)
+        let comicCover = comicData.data.results[0].thumbnail
 
-        // let storySum = data.Plot
-        // console.log('Story Summary: ' + storySum)
+        let comicDate = comicData.data.results[0].comics.items[0].dates
+        console.log('Release date: ' + comicDate)
+
+        let storySum = comicData.data.results[0].comics.items[0].description
+        console.log('Story Summary: ' + storySum)
 
 
         // render
@@ -173,7 +184,7 @@ function comics(userSearch) {
 
         comicTitleEl.textContent = 'Title: ' + comicTitle
 
-        cardRender.append(comicTitleEl)
+        cardRender.append(comicTitleEl, comicCoverEl, comicDateEl, storySumEl)
         document.getElementById('card-page').appendChild(cardRender)
 
       }
@@ -182,7 +193,8 @@ function comics(userSearch) {
      
     }
   
-
+    // backBtn = document.removeAttribute('hide')
+    // add event listenr to bckbtn
 
 
 
