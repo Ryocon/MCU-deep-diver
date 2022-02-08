@@ -135,27 +135,17 @@ function comics(userSearch) {
       .then(function (response) {
         return response.json();
       })
-      .then(function (data) {
-        console.log(data);
-
-// debugger
-
-        // var for comicdata (so it stops being data.data)
-        let comicData = data
-
-        const characterID = comicData.data.results[0].id
-        console.log(characterID)
-
-        // data
+      .then(function (comicData) {
         var noResults = comicData.data.results.length === 0;
 
         if (noResults) {
           console.log('Why does spiderman not work?')
           return
-        } else {
-          comicFetcher(characterID)
         }
 
+        var foundCharacter = comicData.data.results[0];
+
+        comicFetcher(foundCharacter.id)     
       }
   );
     
@@ -171,51 +161,47 @@ function comicFetcher(characterID) {
         return response.json();
       })
       .then(function (comicFetch) {
+      
 
-        console.log(comicFetch)
-
-        let comicTitle = comicFetch.data.results[0].title
-        console.log('Comic title: ' + comicTitle)
-
-        // not working
-        let comicCover = comicFetch.data.results[0].thumbnail.path + "." +  comicFetch.data.results[0].thumbnail.extension
-
-        let comicDate = comicFetch.data.results[0].dates[0].date
-        console.log('On sale date: ' + comicDate)
-
-        let comicPages = comicFetch.data.results[0].pageCount
+        var noOfIterations = Math.min(comicFetch.data.results.length, 9)
 
 
-        // render
-        const cardRender = document.createElement('div')
-        const comicCoverEl = document.createElement('img')
-        const comicTitleEl = document.createElement('h2')
-        const comicDateEl = document.createElement('p')
-        const comicPagesEl = document.createElement('p')
-        
+        for(var i = 0; i < noOfIterations; i++) {
+          var character = comicFetch.data.results[i]
 
-        cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
-        comicTitleEl.setAttribute('class', 'p-1 mt-2')
-        comicDateEl.setAttribute('class', 'p-1')
-        comicPagesEl.setAttribute('class', 'p-1')
+          let comicTitle = character.title
+          let comicCover = character.thumbnail.path + "." +  character.thumbnail.extension
+          let comicDate = character.dates[0].date
+          console.log('On sale date: ' + comicDate)
+          let comicPages = character.pageCount
 
-        comicCoverEl.setAttribute('src', comicCover)
-        comicCoverEl.setAttribute('class', 'rounded-lg')
+          const cardRender = document.createElement('div')
+          const comicCoverEl = document.createElement('img')
+          const comicTitleEl = document.createElement('h2')
+          const comicDateEl = document.createElement('p')
+          const comicPagesEl = document.createElement('p')
+          
 
-        
-        // appender
-        cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')        
-
-        comicTitleEl.textContent = 'Title: ' + comicTitle
-        comicDateEl.textContent = 'On sale date: ' + comicDate
-        comicPagesEl.textContent = 'Page count: ' + comicPages
-
-
-        cardRender.append(comicTitleEl, comicCoverEl, comicDateEl, comicPagesEl)
-        document.getElementById('card-page').appendChild(cardRender)
-
-
-
+          cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
+          comicTitleEl.setAttribute('class', 'p-1 mt-2')
+          comicDateEl.setAttribute('class', 'p-1')
+          comicPagesEl.setAttribute('class', 'p-1')
+  
+          comicCoverEl.setAttribute('src', comicCover)
+          comicCoverEl.setAttribute('class', 'rounded-lg')
+  
+          
+          // appender
+          cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')        
+  
+          comicTitleEl.textContent = 'Title: ' + comicTitle
+          comicDateEl.textContent = 'On sale date: ' + comicDate
+          comicPagesEl.textContent = 'Page count: ' + comicPages
+  
+  
+          cardRender.append(comicTitleEl, comicCoverEl, comicDateEl, comicPagesEl)
+          document.getElementById('card-page').appendChild(cardRender)
+        }
 
       }
     )
