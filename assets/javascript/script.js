@@ -129,6 +129,7 @@ function mcuFetcher(userSearch) {
 
 }
 
+// THIS FINDS THE CHARACTER ID AND PARSES IT INTO THE comicFetcher function
 function comics(userSearch) {
   fetch(`http://gateway.marvel.com/v1/public/characters?name=${userSearch}&apikey=${marvelKey}`)
       .then(function (response) {
@@ -137,10 +138,13 @@ function comics(userSearch) {
       .then(function (data) {
         console.log(data);
 
-debugger
+// debugger
 
         // var for comicdata (so it stops being data.data)
         let comicData = data
+
+        const characterID = comicData.data.results[0].id
+        console.log(characterID)
 
         // data
         var noResults = comicData.data.results.length === 0;
@@ -148,32 +152,52 @@ debugger
         if (noResults) {
           console.log('Why does spiderman not work?')
           return
+        } else {
+          comicFetcher(characterID)
         }
 
-        let comicTitle = data.data.results[0].comics.items[0].name
+      }
+  );
+    
+     
+}
+
+
+
+// THIS FETCHES THE COMICS AND APPENDS THEM TO DA PAGE
+function comicFetcher(characterID) {
+  fetch(`http://gateway.marvel.com/v1/public/characters/${characterID}/comics?apikey=${marvelKey}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (comicFetch) {
+
+        console.log(comicFetch)
+
+        let comicTitle = comicFetch.data.results[0].title
         console.log('Comic title: ' + comicTitle)
 
-        let comicCover = comicData.data.results[0].thumbnail
+        // not working
+        let comicCover = comicFetch.data.results[0].thumbnail.path + "." +  comicFetch.data.results[0].thumbnail.extension
 
-        let comicDate = comicData.data.results[0].comics.items[0].dates
-        console.log('Release date: ' + comicDate)
+        let comicDate = comicFetch.data.results[0].dates[0].date
+        console.log('On sale date: ' + comicDate)
 
-        let storySum = comicData.data.results[0].comics.items[0].description
-        console.log('Story Summary: ' + storySum)
+        let comicPages = comicFetch.data.results[0].pageCount
 
 
         // render
         const cardRender = document.createElement('div')
-        
         const comicCoverEl = document.createElement('img')
         const comicTitleEl = document.createElement('h2')
         const comicDateEl = document.createElement('p')
-        const storySumEl = document.createElement('p')
+        const comicPagesEl = document.createElement('p')
+        
 
         cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')
         comicTitleEl.setAttribute('class', 'p-1 mt-2')
         comicDateEl.setAttribute('class', 'p-1')
-        storySumEl.setAttribute('class', 'p-1')
+        comicPagesEl.setAttribute('class', 'p-1')
 
         comicCoverEl.setAttribute('src', comicCover)
         comicCoverEl.setAttribute('class', 'rounded-lg')
@@ -183,15 +207,20 @@ debugger
         cardRender.setAttribute('class', 'flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1')        
 
         comicTitleEl.textContent = 'Title: ' + comicTitle
+        comicDateEl.textContent = 'On sale date: ' + comicDate
+        comicPagesEl.textContent = 'Page count: ' + comicPages
 
-        cardRender.append(comicTitleEl, comicCoverEl, comicDateEl, storySumEl)
+
+        cardRender.append(comicTitleEl, comicCoverEl, comicDateEl, comicPagesEl)
         document.getElementById('card-page').appendChild(cardRender)
 
+
+
+
       }
-      );
-    
-     
-    }
+    )
+  }
+
   
     // backBtn = document.removeAttribute('hide')
     // add event listenr to bckbtn
