@@ -19,6 +19,10 @@ var cardPage = document.getElementById("card-page");
 // main page for removing + adding classes
 var mainPage = document.getElementById("main-page");
 
+//Get previous searches from local storage - if they dont exist, create empty array to assign future searchs
+var previousSearchs =
+  JSON.parse(localStorage.getItem("previous-search-history")) || [];
+
 // search button with event listener
 // the function that called the fetch functions based on search params will need to be called here
 searchBtn.addEventListener("click", (event) => {
@@ -40,6 +44,12 @@ searchBtn.addEventListener("click", (event) => {
     console.log("Please select an option!");
     return;
   }
+  //add new search to the previosu searchs array then add this to local storage
+  previousSearchs.push(userSearch);
+  localStorage.setItem(
+    "previous-search-history",
+    JSON.stringify(previousSearchs)
+  );
 
   //   if statment based on search parameters
   // search param value finder
@@ -244,3 +254,5 @@ function comicFetcher(characterID) {
 // add event listenr to bckbtn
 
 // array of Marvel search terms allowed
+
+// setup local storage, storing searches in an array. next we need to write a function recallign and rendering those searches.
