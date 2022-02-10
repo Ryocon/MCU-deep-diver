@@ -46,11 +46,24 @@ function storageGetter() {
 // square brackets to get the stuff -1
 function storageAppender() {
 
-mainPage.remove()
+var previousSearches = storageGetter()
+var mostRecentSearch = previousSearches.pop()
 
+if (mostRecentSearch.selectedCategory === 'mcu') {
+  mainPage.remove()
+  mcuFetcher(mostRecentSearch.userSearch)
 
+} else if (mostRecentSearch.selectedCategory === 'comics') {
+    mainPage.remove()
+    comics(mostRecentSearch.userSearch)
 
+  } else {
+    console.log("No previous search!");
+    return;
+  }
 }
+
+previousSearchBtn.addEventListener('click', storageAppender)
 
 
 
@@ -171,6 +184,7 @@ function comicFetcher(characterID) {
     `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?apikey=${marvelKey}`
   )
     .then(function (response) {
+      debugger
       return response.json();
     })
     .then(function (comicFetch) {
@@ -240,7 +254,7 @@ searchAgainBtn.addEventListener("click", function() {
 
 
 //  ????????? does nothing just like year 7 kids
-previousSearches; 
+// previousSearches; 
 
 
 
