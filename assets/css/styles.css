@@ -55,17 +55,16 @@ button:active {
   transition: all 0.5s ease;
 } */
 
-
 /* header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 5px 2%;
   /* background-color: #ed1d24; */
-  /* background-image: linear-gradient(rgb(186, 61, 61), red);
+/* background-image: linear-gradient(rgb(186, 61, 61), red);
   /* border-radius: 0.5rem; */
-  /* flex-direction: row;
-} */ 
+/* flex-direction: row;
+} */
 
 .banner-area {
   background-image: url("https://images3.alphacoders.com/232/thumb-1920-232145.jpg");
@@ -78,4 +77,18 @@ button:active {
   position: inherit;
   opacity: 0.3;
   border-radius: 0.5rem;
+}
+
+/* .headerContainer button {
+} */
+
+.searchAgainBtnStyle {
+  background: #ed1d24;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
 }
