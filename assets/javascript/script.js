@@ -16,6 +16,9 @@ var searchBtn = document.getElementById("search-btn");
 // search button call
 var searchAgainBtn = document.getElementById("searchAgainBtn");
 
+// previous search button
+var previousSearchBtn = document.getElementById('previous-search-btn')
+
 // card page
 var cardPage = document.getElementById("card-page");
 
@@ -25,17 +28,30 @@ var mainPage = document.getElementById("main-page");
 
 
 // !!!!! Get previous searches from local storage - if they dont exist, create empty array to assign future searchs
-var previousSearches =
-  JSON.parse(localStorage.getItem("previous-search-history")) || [];
+function storageSetter(userSearch, selectedCategory) {
+  searchParams = { userSearch, selectedCategory }
+  var previousSearches = JSON.parse(localStorage.getItem("previous-search-history")) || [];
+  previousSearches.push(searchParams)
+  localStorage.setItem(
+    "previous-search-history",
+    JSON.stringify(previousSearches)
+  )
+}
+
+// GET THE STUFF
+function storageGetter() {
+  return JSON.parse(localStorage.getItem('previous-search-history'))
+}
+
+// square brackets to get the stuff -1
+function storageAppender() {
+
+mainPage.remove()
 
 
-// function storageFetcher(previousSearches) {
-//   previousSearches.push(userSearch);
-//   localStorage.setItem(
-//     "previous-search-history",
-//     JSON.stringify(previousSearches)
-//   )
-// }
+
+}
+
 
 
   
@@ -45,17 +61,19 @@ searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   const userSearch = userInput.value;
 
+  const selectedCategory = searchParameter.value
+  
   //   mainPage.classList.add('hide')
 
 
-  if (searchParameter.value === "mcu") {
+  if (selectedCategory === "mcu") {
     // removes main page elements NO ANIMATION !!!
     mainPage.remove();
     mcuFetcher(userSearch);
-  } else if (searchParameter.value === "comics") {
+  } else if (selectedCategory === "comics") {
     mainPage.remove();
     comics(userSearch);
-  } else if (searchParameter.value === "events") {
+  } else if (selectedCategory === "events") {
   }
   //   function here
   else {
@@ -64,12 +82,13 @@ searchBtn.addEventListener("click", (event) => {
   }
   
   // !!!!! add new search to the previosu searchs array then add this to local storage
-  previousSearches.push(userSearch);
-  localStorage.setItem(
-    "previous-search-history",
-    JSON.stringify(previousSearches)
-  );
+  // previousSearches.push(userSearch);
+  // localStorage.setItem(
+  //   "previous-search-history",
+  //   JSON.stringify(previousSearches)
+  // );
 
+  storageSetter(userSearch, selectedCategory)
 
   //   if statment based on search parameters
   // search param value finder
@@ -220,7 +239,7 @@ searchAgainBtn.addEventListener("click", function() {
 });
 
 
-//  ?????????
+//  ????????? does nothing just like year 7 kids
 previousSearches; 
 
 
