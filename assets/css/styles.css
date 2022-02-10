@@ -79,8 +79,10 @@ button:active {
   border-radius: 0.5rem;
 }
 
-/* .headerContainer button {
-} */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
 
 .searchAgainBtnStyle {
   background: #ed1d24;
@@ -91,4 +93,7 @@ button:active {
   border: 3px solid black;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
-}
+  display: flex;
+  position: relative;
+ }
+  
