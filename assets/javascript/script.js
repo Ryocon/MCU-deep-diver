@@ -36,6 +36,7 @@ searchBtn.addEventListener("click", (event) => {
     mainPage.remove();
     mcuFetcher(userSearch);
   } else if (searchParameter.value === "comics") {
+    mainPage.remove();
     comics(userSearch);
   } else if (searchParameter.value === "events") {
   }
