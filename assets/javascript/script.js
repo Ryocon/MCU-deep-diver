@@ -17,7 +17,7 @@ var searchBtn = document.getElementById("search-btn");
 var searchAgainBtn = document.getElementById("searchAgainBtn");
 
 // previous search button
-var previousSearchBtn = document.getElementById('previous-search-btn')
+var previousSearchBtn = document.getElementById("previous-search-btn");
 
 // card page
 var cardPage = document.getElementById("card-page");
@@ -25,59 +25,51 @@ var cardPage = document.getElementById("card-page");
 // main page for removing + adding classes
 var mainPage = document.getElementById("main-page");
 
-
-
 // !!!!! Get previous searches from local storage - if they dont exist, create empty array to assign future searchs
 function storageSetter(userSearch, selectedCategory) {
-  searchParams = { userSearch, selectedCategory }
-  var previousSearches = JSON.parse(localStorage.getItem("previous-search-history")) || [];
-  previousSearches.push(searchParams)
+  searchParams = { userSearch, selectedCategory };
+  var previousSearches =
+    JSON.parse(localStorage.getItem("previous-search-history")) || [];
+  previousSearches.push(searchParams);
   localStorage.setItem(
     "previous-search-history",
     JSON.stringify(previousSearches)
-  )
+  );
 }
 
 // GET THE STUFF
 function storageGetter() {
-  return JSON.parse(localStorage.getItem('previous-search-history'))
+  return JSON.parse(localStorage.getItem("previous-search-history"));
 }
 
 // square brackets to get the stuff -1
 function storageAppender() {
+  var previousSearches = storageGetter();
+  var mostRecentSearch = previousSearches.pop();
 
-var previousSearches = storageGetter()
-var mostRecentSearch = previousSearches.pop()
-
-if (mostRecentSearch.selectedCategory === 'mcu') {
-  mainPage.remove()
-  mcuFetcher(mostRecentSearch.userSearch)
-
-} else if (mostRecentSearch.selectedCategory === 'comics') {
-    mainPage.remove()
-    comics(mostRecentSearch.userSearch)
-
+  if (mostRecentSearch.selectedCategory === "mcu") {
+    mainPage.remove();
+    mcuFetcher(mostRecentSearch.userSearch);
+  } else if (mostRecentSearch.selectedCategory === "comics") {
+    mainPage.remove();
+    comics(mostRecentSearch.userSearch);
   } else {
     console.log("No previous search!");
     return;
   }
 }
 
-previousSearchBtn.addEventListener('click', storageAppender)
+previousSearchBtn.addEventListener("click", storageAppender);
 
-
-
-  
 // search button with event listener
 // the function that called the fetch functions based on search params will need to be called here
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   const userSearch = userInput.value;
 
-  const selectedCategory = searchParameter.value
-  
-  //   mainPage.classList.add('hide')
+  const selectedCategory = searchParameter.value;
 
+  //   mainPage.classList.add('hide')
 
   if (selectedCategory === "mcu") {
     // removes main page elements NO ANIMATION !!!
@@ -93,7 +85,7 @@ searchBtn.addEventListener("click", (event) => {
     console.log("Please select an option!");
     return;
   }
-  
+
   // !!!!! add new search to the previosu searchs array then add this to local storage
   // previousSearches.push(userSearch);
   // localStorage.setItem(
@@ -101,13 +93,12 @@ searchBtn.addEventListener("click", (event) => {
   //   JSON.stringify(previousSearches)
   // );
 
-  storageSetter(userSearch, selectedCategory)
+  storageSetter(userSearch, selectedCategory);
 
   //   if statment based on search parameters
   // search param value finder
   // if value == mcu > mcufetcher
 });
-
 
 // prototype fucntion for multiple film search cards
 function mcuFetcher(userSearch) {
@@ -154,7 +145,6 @@ function mcuFetcher(userSearch) {
     });
 }
 
-
 // THIS FINDS THE CHARACTER ID AND PARSES IT INTO THE comicFetcher function
 function comics(userSearch) {
   fetch(
@@ -177,14 +167,13 @@ function comics(userSearch) {
     });
 }
 
-
 // THIS FETCHES THE COMICS AND APPENDS THEM TO DA PAGE
 function comicFetcher(characterID) {
   fetch(
     `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?apikey=${marvelKey}`
   )
     .then(function (response) {
-      debugger
+      debugger;
       return response.json();
     })
     .then(function (comicFetch) {
@@ -245,22 +234,18 @@ function comicFetcher(characterID) {
 
 // setup local storage, storing searches in an array. next we need to write a function recallign and rendering those searches.
 
-searchAgainBtn.addEventListener("click", function() {
+searchAgainBtn.addEventListener("click", function () {
   // document.removeAttribute('hide')
   cardPage.remove();
   // mainPage.append();
   window.location.reload();
 });
 
-
 //  ????????? does nothing just like year 7 kids
-// previousSearches; 
-
-
+// previousSearches;
 
 // if previousSearches === true {
 //   previoussearchbtn.appened.mainPage
 // } else return
-
 
 // Alert style notification appending to page on bad search that doesn't match the array !!!
