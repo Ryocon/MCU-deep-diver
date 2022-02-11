@@ -7,6 +7,8 @@
     <title>MCU Deep Diver</title>
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fontawesome icons -->
+    <script src="https://kit.fontawesome.com/0d1f711fbd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -14,7 +16,7 @@
 <header class="headerContainer">
     <h1 class="MDPlogo">MARVEL DEEP DIVER</h1>
     <!-- <a class="backButton">Back</a> -->
-    <button id="searchAgainBtn" class="searchAgainBtnStyle">Search Again</button>
+    <button id="searchAgainBtn" class="m-2 pt-2 pb-2 p-2 pl-1.5 border-solid border-black border-2 rounded-lg ml-1 h-10 w-30 bg-red-700">Search Again</button>
 </header>
 
 <!-- banner below of translucent marvel pic-->
@@ -26,16 +28,21 @@
     <!-- flex for logo -->
     <img id="marvel-logo" class="p-2" width="200px" height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" alt="marvel logo"> 
     
-    <input class="text-black" type="text" name="search" id="user-input">
+    <input class="text-black border-solid border-black border-2 rounded-lg" type="text" name="search" id="user-input">
 
-    <select class="m-2" name="search-parameters" id="search-params">
+<div class="flex flex-row m-1">
+
+    <select class="m-2 pt-2 pb-2 pl-1.5 border-solid border-black border-2 rounded-lg ml-1 h-10 w-20 bg-red-700" name="search-parameters" id="search-params">
         <option value="placeholder">Options</option>
         <option value="mcu">MCU</option>
         <option value="comics">Comics</option>
     </select>
     
-    <button id="search-btn" type="submit" class="m-1">search</button>
-    <button id="previous-search-btn" type="submit" class="m-1 searchAgainBtnStyle">previous search</button>
+    <button id="search-btn" type="submit" class="m-1.25 mt-2 pt-2 pb-1 h-10 w-20 border-solid border-black border-2 rounded-lg bg-red-700">Search <i class="fa-solid fa-chevron-right bg-red-700"></i></button>
+    
+</div>
+
+    <button id="previous-search-btn" type="submit" class="m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg bg-red-700">Previous Search</button>
 
     <!-- new alert -->
     <div id="alert"></div>
@@ -45,13 +52,14 @@
 
 <!-- test -->
 <!-- blank div for rendering our cards upon search -->
-<div id="card-page">
+<div id="card-page" class="flex flex-wrap justify-content">
 
 
-<button id='load-more-btn' class="hide">Load More</button>
+
 
 </div>
 
+<button id='load-more-btn' class="hide">Load More</button>
 
 </div>
 
