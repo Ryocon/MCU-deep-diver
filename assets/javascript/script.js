@@ -108,7 +108,7 @@ searchBtn.addEventListener("click", (event) => {
 
   //   mainPage.classList.add('hide')
   if (!marvelCharacters.includes(userSearch.toUpperCase())) {
-    console.log('Search a Marvel key term!')
+    addInvalidSearchEl();
     return
   }
 
@@ -153,6 +153,29 @@ searchBtn.addEventListener("click", (event) => {
   // search param value finder
   // if value == mcu > mcufetcher
 });
+
+
+
+// new alert
+function addInvalidSearchEl() {
+  let alert = document.querySelector("#alert");
+
+  let langs = [
+    "Please select a Marvel Search word or check your spelling! Hint Spider-Man!",
+  ];
+
+  let nodes = langs.map((lang) => {
+    let alertEl = document.createElement("h1");
+    alertEl.setAttribute("class", "alert-class");
+    alertEl.textContent = lang;
+    return alertEl;
+  });
+
+  alert.append(...nodes);
+}
+
+
+
 
 // prototype fucntion for multiple film search cards
 function mcuFetcher(userSearch) {
@@ -209,7 +232,7 @@ function comics(userSearch) {
     })
     .then(function (comicData) {
       var noResults = comicData.data.results.length === 0;
-
+      console.log(comicData)
       if (noResults) {
         console.log("Why does spiderman not work?");
         return;
@@ -224,7 +247,7 @@ function comics(userSearch) {
 // THIS FETCHES THE COMICS AND APPENDS THEM TO DA PAGE
 function comicFetcher(characterID) {
   fetch(
-    `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?apikey=${marvelKey}`
+    `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?limit=90&apikey=${marvelKey}`
   )
     .then(function (response) {
       return response.json();
@@ -276,9 +299,17 @@ function comicFetcher(characterID) {
           comicPagesEl
         );
         document.getElementById("card-page").appendChild(cardRender);
-      }
+
+        }
+
+        
     });
 }
+
+// !!!!
+// function loadMore ()
+
+// new fetch that sets offest but adds 9 per click to query url
 
 // backBtn = document.removeAttribute('hide')
 // add event listenr to bckbtn

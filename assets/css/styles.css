@@ -110,3 +110,15 @@ button:active {
   display: flex;
   position: relative;
  }
+
+
+ /* new alert */
+.alert-class {
+  margin-top: 1rem;
+  padding: 2px;
+  background-color: #f44336; /* Red */
+  border-radius: 0.4em;
+  color: white;
+  margin-bottom: 15px;
+}
+
