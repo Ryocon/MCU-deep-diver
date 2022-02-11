@@ -602,35 +602,11 @@ searchBtn.addEventListener("click", (event) => {
     );
   }
 
-  // if (userSearch == inArray && selectedCategory === "mcu") {
-  //   // removes main page elements NO ANIMATION !!!
-  //   mainPage.remove();
-  //   mcuFetcher(userSearch);
-  // } else if (userSearch == inArray && selectedCategory === "comics") {
-  //   mainPage.remove();
-  //   comics(userSearch);
-  // }
-  // //   function here
-  // else {
-  //   console.log("Please select an option!");
-  //   return;
-  // }
-
-  // !!!!! add new search to the previosu searchs array then add this to local storage
-  // previousSearches.push(userSearch);
-  // localStorage.setItem(
-  //   "previous-search-history",
-  //   JSON.stringify(previousSearches)
-  // );
-
   storageSetter(userSearch, selectedCategory);
 
-  //   if statment based on search parameters
-  // search param value finder
-  // if value == mcu > mcufetcher
 });
 
-// new alert
+// invalid search notification on main page
 function addInvalidSearchEl() {
   let alert = document.querySelector("#alert");
 
@@ -784,7 +760,7 @@ function comicFetcher(characterID) {
     });
 }
 
-// !!!!
+// !!!! Load more button function
 loadMoreBtn.addEventListener("click", function () {
   counter += 9;
 
@@ -795,14 +771,6 @@ loadMoreBtn.addEventListener("click", function () {
   }
 });
 
-// new fetch that sets offest but adds 9 per click to query url
-
-// backBtn = document.removeAttribute('hide')
-// add event listenr to bckbtn
-
-// array of Marvel search terms allowed
-
-// setup local storage, storing searches in an array. next we need to write a function recallign and rendering those searches.
 
 searchAgainBtn.addEventListener("click", function () {
   // document.removeAttribute('hide')
@@ -811,11 +779,4 @@ searchAgainBtn.addEventListener("click", function () {
   window.location.reload();
 });
 
-//  ????????? does nothing just like year 7 kids
-// previousSearches;
 
-// if previousSearches === true {
-//   previoussearchbtn.appened.mainPage
-// } else return
-
-// Alert style notification appending to page on bad search that doesn't match the array !!!
