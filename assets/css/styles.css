@@ -25,14 +25,18 @@
 button:hover {
   transform: translate(-0.05em, -0.05em);
   /* box-shadow: 0.15em 0.15em; */
-  transition: all 0.1s ease 0s
-
+  transition: all 0.1s ease 0s;
 }
 
 button {
-  box-shadow: 0.1em 0.1em;
-
+  --box-shadow-color: rgb(9, 8, 1);
+  box-shadow: 1px 2px 3px var(--box-shadow-color);
+  /* box-shadow: 0.1em 0.1em; */
 }
+
+/* button {
+  box-shadow: 0.1em 0.1em;
+} */
 
 button:active {
   transform: translate(0.05em, 0.05em);
@@ -112,10 +116,9 @@ select:hover {
   box-shadow: 0.1em 0.1em;
   display: flex;
   position: relative;
- }
-  
+}
 
- /* .previousSearchBtnStyle {
+/* .previousSearchBtnStyle {
   background: #ed1d24;
   font-family: inherit;
   padding: 0.6em 1.3em;
@@ -128,8 +131,7 @@ select:hover {
   position: relative;
  } */
 
-
- /* new alert */
+/* new alert */
 .alert-class {
   margin-top: 1rem;
   padding: 2px;
@@ -142,4 +144,3 @@ select:hover {
 #searchAgainBtn {
   display: none;
 }
-
