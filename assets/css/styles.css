@@ -139,3 +139,7 @@ select:hover {
   margin-bottom: 15px;
 }
 
+#searchAgainBtn {
+  display: none;
+}
+

@@ -639,6 +639,8 @@ function mcuFetcher(userSearch) {
 
       var noOfIterations = Math.min(filmFetch.Search.length, 9);
 
+      searchAgainBtn.style.display = "flex";
+
       console.log(noOfIterations);
       for (var i = 0; i < noOfIterations; i++) {
         // currently doesn't like the search[i] bit below
@@ -711,6 +713,7 @@ function comicFetcher(characterID) {
     })
     .then(function (comicFetch) {
       var noOfIterations = Math.min(comicFetch.data.results.length, 9);
+      searchAgainBtn.style.display = "flex";
 
       for (var i = 0; i < noOfIterations; i++) {
         var character = comicFetch.data.results[i];
