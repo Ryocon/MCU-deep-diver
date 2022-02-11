@@ -1,6 +1,6 @@
 // Marvel Characters
 
-var marvelcharacters = ["3d Man”, “3-d Man”, “Ant-Man”, “Antman”, “Ant Man”, “Abomination”, “Chang Lam”, “Abraham Cornelius”, “Abraham Erskine”, “Adrian Toomes”, “Agatha Harkness”, “AIM agents”, “Alpha Dog”, “Amphibian”, “Squadron Supreme”, “Anaconda”, “Blanche Sitznski”, “Sitz Ski Blanche”, “Ancient One”, “Apocalypse”, “Arcade”, “Arcanna”, “Arcanna Jones”, “Arnim Zola”, “Angel”, “Warren Worthington III”, “Arsenal”, “Asp”, “Cleo Nefertiti”, “Assemble”, “Balder”, “Banshee”, “Sean Cassidy”, “Baron Zemo”, “Baron Strucker”, “Beetle”, “Ben Parker”, “Ben Reilly”, “Betty Brant”, “Betty Ross”, “Lucas Bishop”, “Black Bolt”, “Black Cat”, “Felica Hardy”, “Jack Terr Black”, “Black Knight”, “Dane Whitman”, “Black Mamba”, “Tandy Sealy”, “Black Panther”, “T Challa Udaku”, “Black Talon”, “Monica Chang”, “Black Widow", "Natasha Romanoff", "Blackheart", "Blacklash", "Marc Scott", "Blade", "Eric Cross Brooks", "Blob", "Fred J. Dukes", "Blur", "Bolivar Trask", "Bombshell", "Boomerang", "Fred Myers", "Bucky", "Bulldozer", "Bullseye", "Benjamin Pointdexter", "Bruce Banner", "Blastaar", "Cable", "Callisto", "Camellia", "Cannonball", "Sam Guthrie", "Captain America", "Steve Rogers", "Captain Atlas", "Captain Britain", "Brain Braddock", "Captain France", "Hugo Etherlinck", "Captain Italy", "Umberto Landi", "Captain Spain", "Carlos Fraile", "Captain UK", "Carnage", "Venom", "Carol Danvers", "Captain Marvel", "Catherine Mora", "Chameleon", "The Champion", "Chitauri", "Ultimate Marvel", "The Colonel", "Abdul Al-Rahman", "Colossus", "Contessa Valentina Allegra di Fontaine", "Crossbones", "Brock Rumlow", "Crystal", "Cyclops", "Scott Summers", "Clint Barton", "Hawkeye", "Dai Thomas", "Daniel Toliver", "Daredevil", "Mat Murdock", "Matthew Murdock", "Dario Agger", "CEO", "Dazzler", "Allison Blaire", "Ali Allison", "Deacon Frost", "Deadpool", "Wade Wilson", "Death Adder", "Deathlok", "Deathstrike", "Yuriko Oyama", "Derek Morgan", "Detonator", "Ricky Gibson", "Devil Dinosaur", "Diablo", "Doctor Octopus", "Otto Octavius", "Doctor Strange", "Stephen Strange", "Domino", "Drake Raven", "Doombot", "Doctor Spectrum", "Dr. Faustus", "Doctor Faustus", "Johann Fennhoff", "Dreadknight",  "Bram Velsing", "Dreamcatcher", "De Lone Wolf", "Asim Limbu", "Daisy Johnson", "Echo", "Maya Lopez", "Ego", "Electro", "Max Dillon", "Elektra", "Elektra Natchios", "Emma Frost", "White Queen", "Enchantress", "Enid Rich", "Ellie Camacho", "Falcon", "Sam Wilson", "Fancy Dan", "Dan Rubenstein", "Fandral", "Fenis",  
+var marvelCharacters = ["3d Man”, “3-d Man”, “Ant-Man”, “Antman”, “Ant Man”, “Abomination”, “Chang Lam”, “Abraham Cornelius”, “Abraham Erskine”, “Adrian Toomes”, “Agatha Harkness”, “AIM agents”, “Alpha Dog”, “Amphibian”, “Squadron Supreme”, “Anaconda”, “Blanche Sitznski”, “Sitz Ski Blanche”, “Ancient One”, “Apocalypse”, “Arcade”, “Arcanna”, “Arcanna Jones”, “Arnim Zola”, “Angel”, “Warren Worthington III”, “Arsenal”, “Asp”, “Cleo Nefertiti”, “Assemble”, “Balder”, “Banshee”, “Sean Cassidy”, “Baron Zemo”, “Baron Strucker”, “Beetle”, “Ben Parker”, “Ben Reilly”, “Betty Brant”, “Betty Ross”, “Lucas Bishop”, “Black Bolt”, “Black Cat”, “Felica Hardy”, “Jack Terr Black”, “Black Knight”, “Dane Whitman”, “Black Mamba”, “Tandy Sealy”, “Black Panther”, “T Challa Udaku”, “Black Talon”, “Monica Chang”, “Black Widow", "Natasha Romanoff", "Blackheart", "Blacklash", "Marc Scott", "Blade", "Eric Cross Brooks", "Blob", "Fred J. Dukes", "Blur", "Bolivar Trask", "Bombshell", "Boomerang", "Fred Myers", "Bucky", "Bulldozer", "Bullseye", "Benjamin Pointdexter", "Bruce Banner", "Blastaar", "Cable", "Callisto", "Camellia", "Cannonball", "Sam Guthrie", "Captain America", "Steve Rogers", "Captain Atlas", "Captain Britain", "Brain Braddock", "Captain France", "Hugo Etherlinck", "Captain Italy", "Umberto Landi", "Captain Spain", "Carlos Fraile", "Captain UK", "Carnage", "Venom", "Carol Danvers", "Captain Marvel", "Catherine Mora", "Chameleon", "The Champion", "Chitauri", "Ultimate Marvel", "The Colonel", "Abdul Al-Rahman", "Colossus", "Contessa Valentina Allegra di Fontaine", "Crossbones", "Brock Rumlow", "Crystal", "Cyclops", "Scott Summers", "Clint Barton", "Hawkeye", "Dai Thomas", "Daniel Toliver", "Daredevil", "Mat Murdock", "Matthew Murdock", "Dario Agger", "CEO", "Dazzler", "Allison Blaire", "Ali Allison", "Deacon Frost", "Deadpool", "Wade Wilson", "Death Adder", "Deathlok", "Deathstrike", "Yuriko Oyama", "Derek Morgan", "Detonator", "Ricky Gibson", "Devil Dinosaur", "Diablo", "Doctor Octopus", "Otto Octavius", "Doctor Strange", "Stephen Strange", "Domino", "Drake Raven", "Doombot", "Doctor Spectrum", "Dr. Faustus", "Doctor Faustus", "Johann Fennhoff", "Dreadknight",  "Bram Velsing", "Dreamcatcher", "De Lone Wolf", "Asim Limbu", "Daisy Johnson", "Echo", "Maya Lopez", "Ego", "Electro", "Max Dillon", "Elektra", "Elektra Natchios", "Emma Frost", "White Queen", "Enchantress", "Enid Rich", "Ellie Camacho", "Falcon", "Sam Wilson", "Fancy Dan", "Dan Rubenstein", "Fandral", "Fenis",  
 "Filament", "Fin Casey", "Ivory Shadow", "Firepower", "Firestar", 
 "Liz Allen", "Elizabeth Allen", "Forge", "Fountain", "Franklin Foggy Nelson", "Foggy", "Franklin Nelson", "Franklin Richards", 
 "Franklin Storm", "Fred Flash Thompson", "Fury", "Nick Fury", 
@@ -33,7 +33,7 @@ var marvelcharacters = ["3d Man”, “3-d Man”, “Ant-Man”, “Antman”, 
 "Larry Jones","Prowler", "Aaron Davis", "Proteus", "David Xavier", "Psylocke", "Elisabeth ‘Betty’ Braddock", "Pyro", "Pepper Potts", "The Punisher", "Frank Castle", "Peter Parker", "Spiderman","Spider man", "Spider-man", "Peter Quill", "Pietro Maximoff", "Quasar", "Quicksilver", "Pietro Lensherr", "Rage", "Ralph Bohner", "Wandavision", "Red Skull", "Red Ghost", "Red Guardian", "Red Wasp", "Petra Laskov", "RHINO", "Rhona Burchill", "Robbie Burchill", "Richard Parker", "Ringer", "Anthony Davis", "Robbie Robertson", "Rocket Raccoon", "Rogue", "Ronan the Accuser", "Sabra", "Sabretooth", "Victor Creed", "Samual Sterns", "Sandman", "Flint Marko", "Saquatch", "Sam Bullit", "Scarlet Witch", "Wanda Lensherr", "Schizoid Man", "Scorpion", "Sentinels", "Sentry", "Shadowcat", "Kitty Pryde", "Shang-Chi", "Shaman", "Shinobi Shaw", "Shape", "Sharon Carter", "Peggy Carter", "Agent Peggy", "Margaret Carter", "Sky-Eater", "Skrull", "Sebastian Shaw", "Spider-Girl", "May Parker", "Spider-Woman", "Spiderwoman", "Jessica Drew", "Shocker", "Storm", "Star-Lord", "Peter Jason Quill", "Sylvie/lady Loki", "Tandy Bowen",  "Tarantula", "’Dum-Dum’ Dugan", "Thaddeus E. ‘Thunderbolt’ Ross", "Thanos", "Thing", "Benjamin ‘Ben’ J. Grimm", "Thor", "Thunderball", "Tinkerer", "Elijah Stern", "Titanium Man", "Toad", "Tom Thumb", "Trey Langstrom", "Trito", "Tyrone Cash", "Ultron", "Unus", "Ben Urich", "Unicorn", "Valkyrie", "Val Cooper", "Vanisher", "Venom", "Eddie Brock", "Vindicator", "John Wraith", "Vision", "Vulture", "Blackie Drago", "Vengeance", "Volstagg", "Wasp", "Janet Pym", "Whiz Kid", "Matsuya Taki", "Wildpack", "Winter Soldier", "James ‘Bucky’ Buchanan Barnes", "Wolverine", "Logan", "James Howlett", "Jimmy Woo", "Woody", "James Rhodes", "Wong", "Whizzer", "Wrecker", "Wolfsbane", "Rahne Sinclair", "Warlock", "X-23", "Kinney Laura", "Xorn", "Kuan-Yi", "X-man", "X-Men", "Yellowjacket",  "Darren Cross", "Yondu", "Yelena Belova", "Zabu", "Zero", "Zorn", "Shen-Yi", "Zemo"
  ];
 
-console.log (marvelcharacters);
+console.log (marvelCharacters);
 
 
 
@@ -102,6 +102,13 @@ function storageAppender() {
 
 previousSearchBtn.addEventListener("click", storageAppender);
 
+
+
+// function storageChecker() {
+
+// }
+
+
 // search button with event listener
 // the function that called the fetch functions based on search params will need to be called here
 searchBtn.addEventListener("click", (event) => {
@@ -112,20 +119,51 @@ searchBtn.addEventListener("click", (event) => {
 
   //   mainPage.classList.add('hide')
 
-  if (selectedCategory === "mcu") {
-    // removes main page elements NO ANIMATION !!!
-    mainPage.remove();
-    mcuFetcher(userSearch);
-  } else if (selectedCategory === "comics") {
-    mainPage.remove();
-    comics(userSearch);
-  } else if (selectedCategory === "events") {
+
+  for (var i = 0; i < marvelCharacters.length; i++) {
+
+    if (userSearch.includes(marvelCharacters)); 
+
+    debugger
+   
+
+    if (selectedCategory === "mcu") {
+      // removes main page elements NO ANIMATION !!!
+      mainPage.remove();
+      mcuFetcher(userSearch)
+      break
+    } else if (selectedCategory === "comics") {
+      mainPage.remove();
+      comics(userSearch)
+      break
+    } 
+    //   function here
+    else {
+      console.log("Please select an option!");
+      break
+    }
+
+
+
+
   }
-  //   function here
-  else {
-    console.log("Please select an option!");
-    return;
-  }
+
+  
+  
+  
+  // if (userSearch == inArray && selectedCategory === "mcu") {
+  //   // removes main page elements NO ANIMATION !!!
+  //   mainPage.remove();
+  //   mcuFetcher(userSearch);
+  // } else if (userSearch == inArray && selectedCategory === "comics") {
+  //   mainPage.remove();
+  //   comics(userSearch);
+  // } 
+  // //   function here
+  // else {
+  //   console.log("Please select an option!");
+  //   return;
+  // }
 
   // !!!!! add new search to the previosu searchs array then add this to local storage
   // previousSearches.push(userSearch);
