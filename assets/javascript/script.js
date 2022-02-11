@@ -589,13 +589,13 @@ searchBtn.addEventListener("click", (event) => {
     mainPage.remove();
     mcuFetcher(userSearch);
     loadMoreBtn.removeAttribute("hide");
-    loadMoreBtn.setAttribute("class", "searchAgainBtnStyle");
+    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg bg-red-700");
   } else if (selectedCategory === "comics") {
     mainPage.remove();
     comics(userSearch);
     // added button !!!
     loadMoreBtn.removeAttribute("hide");
-    loadMoreBtn.setAttribute("class", "searchAgainBtnStyle");
+    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg bg-red-700");
   } else {
     console.log(
       "Please select a Marvel Search word or check your spelling! Hint Spider-Man"
