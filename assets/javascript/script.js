@@ -1,43 +1,37 @@
 // Marvel Characters
 
-var marvelCharacters = ["3d Man”, “3-d Man”, “Ant-Man”, “Antman”, “Ant Man”, “Abomination”, “Chang Lam”, “Abraham Cornelius”, “Abraham Erskine”, “Adrian Toomes”, “Agatha Harkness”, “AIM agents”, “Alpha Dog”, “Amphibian”, “Squadron Supreme”, “Anaconda”, “Blanche Sitznski”, “Sitz Ski Blanche”, “Ancient One”, “Apocalypse”, “Arcade”, “Arcanna”, “Arcanna Jones”, “Arnim Zola”, “Angel”, “Warren Worthington III”, “Arsenal”, “Asp”, “Cleo Nefertiti”, “Assemble”, “Balder”, “Banshee”, “Sean Cassidy”, “Baron Zemo”, “Baron Strucker”, “Beetle”, “Ben Parker”, “Ben Reilly”, “Betty Brant”, “Betty Ross”, “Lucas Bishop”, “Black Bolt”, “Black Cat”, “Felica Hardy”, “Jack Terr Black”, “Black Knight”, “Dane Whitman”, “Black Mamba”, “Tandy Sealy”, “Black Panther”, “T Challa Udaku”, “Black Talon”, “Monica Chang”, “Black Widow", "Natasha Romanoff", "Blackheart", "Blacklash", "Marc Scott", "Blade", "Eric Cross Brooks", "Blob", "Fred J. Dukes", "Blur", "Bolivar Trask", "Bombshell", "Boomerang", "Fred Myers", "Bucky", "Bulldozer", "Bullseye", "Benjamin Pointdexter", "Bruce Banner", "Blastaar", "Cable", "Callisto", "Camellia", "Cannonball", "Sam Guthrie", "Captain America", "Steve Rogers", "Captain Atlas", "Captain Britain", "Brain Braddock", "Captain France", "Hugo Etherlinck", "Captain Italy", "Umberto Landi", "Captain Spain", "Carlos Fraile", "Captain UK", "Carnage", "Venom", "Carol Danvers", "Captain Marvel", "Catherine Mora", "Chameleon", "The Champion", "Chitauri", "Ultimate Marvel", "The Colonel", "Abdul Al-Rahman", "Colossus", "Contessa Valentina Allegra di Fontaine", "Crossbones", "Brock Rumlow", "Crystal", "Cyclops", "Scott Summers", "Clint Barton", "Hawkeye", "Dai Thomas", "Daniel Toliver", "Daredevil", "Mat Murdock", "Matthew Murdock", "Dario Agger", "CEO", "Dazzler", "Allison Blaire", "Ali Allison", "Deacon Frost", "Deadpool", "Wade Wilson", "Death Adder", "Deathlok", "Deathstrike", "Yuriko Oyama", "Derek Morgan", "Detonator", "Ricky Gibson", "Devil Dinosaur", "Diablo", "Doctor Octopus", "Otto Octavius", "Doctor Strange", "Stephen Strange", "Domino", "Drake Raven", "Doombot", "Doctor Spectrum", "Dr. Faustus", "Doctor Faustus", "Johann Fennhoff", "Dreadknight",  "Bram Velsing", "Dreamcatcher", "De Lone Wolf", "Asim Limbu", "Daisy Johnson", "Echo", "Maya Lopez", "Ego", "Electro", "Max Dillon", "Elektra", "Elektra Natchios", "Emma Frost", "White Queen", "Enchantress", "Enid Rich", "Ellie Camacho", "Falcon", "Sam Wilson", "Fancy Dan", "Dan Rubenstein", "Fandral", "Fenis",  
-"Filament", "Fin Casey", "Ivory Shadow", "Firepower", "Firestar", 
-"Liz Allen", "Elizabeth Allen", "Forge", "Fountain", "Franklin Foggy Nelson", "Foggy", "Franklin Nelson", "Franklin Richards", 
-"Franklin Storm", "Fred Flash Thompson", "Fury", "Nick Fury", 
-"Gah Lak Tus", "Gallowglass", "Gambit", "Remy LeBeau", "Gamora", 
-"Garrison Kane", "Geldoff", "Ghost", "Ghost Rider", "Ghostware", 
-"Giant Man", "Hank", "Scott Edward Harris Lang","Scott Lang", 
-"Gladiator", "Glenn Talbot","Green Goblin", "Norman Osborn", 
-"Gorgon", "Grass Hopper", "Grizzly","Gregory Stark", "Guardian", 
-"Guardian of the Galaxy", "Gwen Stacy", "Groot", "Gilgamesh", 
-"Hammer",  "Eisenhower Canty", "Hammerhead", "Hard-Drive", 
-"Havok", "Alexander ‘Alex’ Summers", "Hawk-Owl","Jack Danner", 
-"The Avengers", "Heather Hudson", "Heimdall", "Hela", "Hellcat",
-"Patsy Walker", "Hobgoblin", "Harry Osborn", "Hogun", "Howard the Duck", "Hulk", "The Hulk", "The incredible Hulk", "Robert Bruce Banner", "Bruce Banner", "Human Torch","John Storm", "Johnny Storm", "Hurricane", "Hyperion", "Iceman", "Robert Drake", "Bobby Drake", "Ikaris", "Impossible Man", "Inertia", "Invisible Woman", "Susan Storm", "Iron Fist", "Danny Rand", "Daniel Rand", "Iron Man", "Tony Stark", "Iron Monger", "Shane Obadiah", "Jackal", "James Braddock", "James Hudson", "James Rupert",  "Jim Rupert",  
-"Rhodes","War Machine", "James Buchanan ‘Bucky’ Barnes", "Jane Foster", "Edwin Jarvis", "Jeanne de Wolfe", "Jennifer Walters", 
-"Jessica Jones", "Jimmy Hudson", "Jimmy Woo", "John Ryker", "John Stacy", "J. Jonah Jameson", "Juggernaut", "Cain Marko", 
-"Justin Hammer", "Kaine", "Kang the Conqueror", "Karen Grant", "Jean Grey", "Karma",  "Xi'an Coy Mahn","Karnak","Ka-Zar", "Kenny ‘King Kong’ McFarlane", "Kingpin", "Wilson Fisk", "Kraven The Hunter", "Sergei Kravinoff", "Kree", "Korg", "Kate Bishop", "Lady Lark", "Layla miller", "Stan Lee","Leech","Leviathan", "Lieberman", "Lilandra Neramani", "Lizard", "Curtus Connors", 
-"Lockjaw", "Loki", "Longshot", "Arthur Centino", "Luke Cage", 
-"Liberatos", "Madame Web", "Magician", "Elliot Boggs", "Magneto", 
-"Erik Lensherr", "Marvel Girl", "Jean Grey", "Man-Ape", 
-"M'Baku", "Mandarin", "Man-Thing", "Ted Sallis", "Mantis","Mark Raxton", "Mary Parker", "Mary Jane Watson", "Master Mence", "Emil Burbank", "Mastermind", "Maximus", "May Parker", "Mephisto", 
-"Miles Warren", "Captain Winter", "Miles Morales", "Mister Fantastic", "Reed Richards", "Mr. Rose", "Ms. Marvel", "George Tarleton", "Mojo Adams", 
-"Mole Man", "Arthur Molekevic", "Morbius", "Vlad Tepes Dracula", 
-"Moira MacTaggert", "Morlocks", "Montana", "Moondragon", "Heather Douglas", "Medusa", "Moon Knight", "Moonknight", "Marc Spector", 
-"Multiple Man", "James Madrox", "Mysterio",  "Quentin Beck", 
-"Mystique",  "Raven Darkhölme", "Namor", "Nathaniel Richards", 
-"Nerd Hulk", "Nebula", "The New Sentinels","Nightmare", "Nightcrawler", "Kurt Wagner", "Nighthawk", "Kyle Richmond", 
-"Nihil", "Northstar", "Jean-Paul Beaubier", "Nova","Rick Jones", 
-"Nuke", "Odin", "Omega Red", "The One Above All", "Onslaught", "Orb Weaver", "Owl", "Ox", "Bruno Sanchez", "Paladin", "Marc Spector", "Pandora", "Margaret Watson", "Penultimate", "Ultimate Marvel", "Perun", "Pete Wisdom", "Phil Coulson", "Agent Coulson", 
-"SHIELD", "S.H.I.E.L.D.", "Phoenix Force", "Phoebe McAllister", "Piledriver", "Polaris", "Lorna Dane", "Power Man", "Power Princess", "Primal Screamer", "Princess Python", "The Principal", 
-"Larry Jones","Prowler", "Aaron Davis", "Proteus", "David Xavier", "Psylocke", "Elisabeth ‘Betty’ Braddock", "Pyro", "Pepper Potts", "The Punisher", "Frank Castle", "Peter Parker", "Spiderman","Spider man", "Spider-man", "Peter Quill", "Pietro Maximoff", "Quasar", "Quicksilver", "Pietro Lensherr", "Rage", "Ralph Bohner", "Wandavision", "Red Skull", "Red Ghost", "Red Guardian", "Red Wasp", "Petra Laskov", "RHINO", "Rhona Burchill", "Robbie Burchill", "Richard Parker", "Ringer", "Anthony Davis", "Robbie Robertson", "Rocket Raccoon", "Rogue", "Ronan the Accuser", "Sabra", "Sabretooth", "Victor Creed", "Samual Sterns", "Sandman", "Flint Marko", "Saquatch", "Sam Bullit", "Scarlet Witch", "Wanda Lensherr", "Schizoid Man", "Scorpion", "Sentinels", "Sentry", "Shadowcat", "Kitty Pryde", "Shang-Chi", "Shaman", "Shinobi Shaw", "Shape", "Sharon Carter", "Peggy Carter", "Agent Peggy", "Margaret Carter", "Sky-Eater", "Skrull", "Sebastian Shaw", "Spider-Girl", "May Parker", "Spider-Woman", "Spiderwoman", "Jessica Drew", "Shocker", "Storm", "Star-Lord", "Peter Jason Quill", "Sylvie/lady Loki", "Tandy Bowen",  "Tarantula", "’Dum-Dum’ Dugan", "Thaddeus E. ‘Thunderbolt’ Ross", "Thanos", "Thing", "Benjamin ‘Ben’ J. Grimm", "Thor", "Thunderball", "Tinkerer", "Elijah Stern", "Titanium Man", "Toad", "Tom Thumb", "Trey Langstrom", "Trito", "Tyrone Cash", "Ultron", "Unus", "Ben Urich", "Unicorn", "Valkyrie", "Val Cooper", "Vanisher", "Venom", "Eddie Brock", "Vindicator", "John Wraith", "Vision", "Vulture", "Blackie Drago", "Vengeance", "Volstagg", "Wasp", "Janet Pym", "Whiz Kid", "Matsuya Taki", "Wildpack", "Winter Soldier", "James ‘Bucky’ Buchanan Barnes", "Wolverine", "Logan", "James Howlett", "Jimmy Woo", "Woody", "James Rhodes", "Wong", "Whizzer", "Wrecker", "Wolfsbane", "Rahne Sinclair", "Warlock", "X-23", "Kinney Laura", "Xorn", "Kuan-Yi", "X-man", "X-Men", "Yellowjacket",  "Darren Cross", "Yondu", "Yelena Belova", "Zabu", "Zero", "Zorn", "Shen-Yi", "Zemo"
+var marvelCharacters = ["3D MAN”, “3-D MAN”, “ANT-MAN”, “ANTMAN”, “ANT MAN”, “ABOMINATION”, “CHANG LAM”, “ABRAHAM CORNELIUS”, “ABRAHAM ERSKINE”, “ADRIAN TOOMES”, “AGATHA HARKNESS”, “AIM AGENTS”, “ALPHA DOG”, “AMPHIBIAN”, “SQUADRON SUPREME”, “ANACONDA”, “BLANCHE SITZNSKI”, “SITZ SKI BLANCHE”, “ANCIENT ONE”, “APOCALYPSE”, “ARCADE”, “ARCANNA”, “ARCANNA JONES”, “ARNIM ZOLA”, “ANGEL”, “WARREN WORTHINGTON III”, “ARSENAL”, “ASP”, “CLEO NEFERTITI”, “ASSEMBLE”, “BALDER”, “BANSHEE”, “SEAN CASSIDY”, “BARON ZEMO”, “BARON STRUCKER”, “BEETLE”, “BEN PARKER”, “BEN REILLY”, “BETTY BRANT”, “BETTY ROSS”, “LUCAS BISHOP”, “BLACK BOLT”, “BLACK CAT”, “FELICA HARDY”, “JACK TERR BLACK”, “BLACK KNIGHT”, “DANE WHITMAN”, “BLACK MAMBA”, “TANDY SEALY”, “BLACK PANTHER”, “T CHALLA UDAKU”, “BLACK TALON”, “MONICA CHANG”, “BLACK WIDOW", "NATASHA ROMANOFF", "BLACKHEART", "BLACKLASH", "MARC SCOTT", "BLADE", "ERIC CROSS BROOKS", "BLOB", "FRED J. DUKES", "BLUR", "BOLIVAR TRASK", "BOMBSHELL", "BOOMERANG", "FRED MYERS", "BUCKY", "BULLDOZER", "BULLSEYE", "BENJAMIN POINTDEXTER", "BRUCE BANNER", "BLASTAAR", "CABLE", "CALLISTO", "CAMELLIA", "CANNONBALL", "SAM GUTHRIE", "CAPTAIN AMERICA", "STEVE ROGERS", "CAPTAIN ATLAS", "CAPTAIN BRITAIN", "BRAIN BRADDOCK", "CAPTAIN FRANCE", "HUGO ETHERLINCK", "CAPTAIN ITALY", "UMBERTO LANDI", "CAPTAIN SPAIN", "CARLOS FRAILE", "CAPTAIN UK", "CARNAGE", "VENOM", "CAROL DANVERS", "CAPTAIN MARVEL", "CATHERINE MORA", "CHAMELEON", "THE CHAMPION", "CHITAURI", "ULTIMATE MARVEL", "THE COLONEL", "ABDUL AL-RAHMAN", "COLOSSUS", "CONTESSA VALENTINA ALLEGRA DI FONTAINE", "CROSSBONES", "BROCK RUMLOW", "CRYSTAL", "CYCLOPS", "SCOTT SUMMERS", "CLINT BARTON", "HAWKEYE", "DAI THOMAS", "DANIEL TOLIVER", "DAREDEVIL", "MAT MURDOCK", "MATTHEW MURDOCK", "DARIO AGGER", "CEO", "DAZZLER", "ALLISON BLAIRE", "ALI ALLISON", "DEACON FROST", "DEADPOOL", "WADE WILSON", "DEATH ADDER", "DEATHLOK", "DEATHSTRIKE", "YURIKO OYAMA", "DEREK MORGAN", "DETONATOR", "RICKY GIBSON", "DEVIL DINOSAUR", "DIABLO", "DOCTOR OCTOPUS", "OTTO OCTAVIUS", "DOCTOR STRANGE", "STEPHEN STRANGE", "DOMINO", "DRAKE RAVEN", "DOOMBOT", "DOCTOR SPECTRUM", "DR. FAUSTUS", "DOCTOR FAUSTUS", "JOHANN FENNHOFF", "DREADKNIGHT",  "BRAM VELSING", "DREAMCATCHER", "DE LONE WOLF", "ASIM LIMBU", "DAISY JOHNSON", "ECHO", "MAYA LOPEZ", "EGO", "ELECTRO", "MAX DILLON", "ELEKTRA", "ELEKTRA NATCHIOS", "EMMA FROST", "WHITE QUEEN", "ENCHANTRESS", "ENID RICH", "ELLIE CAMACHO", "FALCON", "SAM WILSON", "FANCY DAN", "DAN RUBENSTEIN", "FANDRAL", "FENIS",  
+"FILAMENT", "FIN CASEY", "IVORY SHADOW", "FIREPOWER", "FIRESTAR", 
+"LIZ ALLEN", "ELIZABETH ALLEN", "FORGE", "FOUNTAIN", "FRANKLIN FOGGY NELSON", "FOGGY", "FRANKLIN NELSON", "FRANKLIN RICHARDS", 
+"FRANKLIN STORM", "FRED FLASH THOMPSON", "FURY", "NICK FURY", 
+"GAH LAK TUS", "GALLOWGLASS", "GAMBIT", "REMY LEBEAU", "GAMORA", 
+"GARRISON KANE", "GELDOFF", "GHOST", "GHOST RIDER", "GHOSTWARE", 
+"GIANT MAN", "HANK", "SCOTT EDWARD HARRIS LANG","SCOTT LANG", 
+"GLADIATOR", "GLENN TALBOT","GREEN GOBLIN", "NORMAN OSBORN", 
+"GORGON", "GRASS HOPPER", "GRIZZLY","GREGORY STARK", "GUARDIAN", 
+"GUARDIAN OF THE GALAXY", "GWEN STACY", "GROOT", "GILGAMESH", 
+"HAMMER",  "EISENHOWER CANTY", "HAMMERHEAD", "HARD-DRIVE", 
+"HAVOK", "ALEXANDER ‘ALEX’ SUMMERS", "HAWK-OWL","JACK DANNER", 
+"THE AVENGERS", "HEATHER HUDSON", "HEIMDALL", "HELA", "HELLCAT",
+"PATSY WALKER", "HOBGOBLIN", "HARRY OSBORN", "HOGUN", "HOWARD THE DUCK", "HULK", "THE HULK", "THE INCREDIBLE HULK", "ROBERT BRUCE BANNER", "BRUCE BANNER", "HUMAN TORCH","JOHN STORM", "JOHNNY STORM", "HURRICANE", "HYPERION", "ICEMAN", "ROBERT DRAKE", "BOBBY DRAKE", "IKARIS", "IMPOSSIBLE MAN", "INERTIA", "INVISIBLE WOMAN", "SUSAN STORM", "IRON FIST", "DANNY RAND", "DANIEL RAND", "IRON MAN", "TONY STARK", "IRON MONGER", "SHANE OBADIAH", "JACKAL", "JAMES BRADDOCK", "JAMES HUDSON", "JAMES RUPERT",  "JIM RUPERT",  
+"RHODES","WAR MACHINE", "JAMES BUCHANAN ‘BUCKY’ BARNES", "JANE FOSTER", "EDWIN JARVIS", "JEANNE DE WOLFE", "JENNIFER WALTERS", 
+"JESSICA JONES", "JIMMY HUDSON", "JIMMY WOO", "JOHN RYKER", "JOHN STACY", "J. JONAH JAMESON", "JUGGERNAUT", "CAIN MARKO", 
+"JUSTIN HAMMER", "KAINE", "KANG THE CONQUEROR", "KAREN GRANT", "JEAN GREY", "KARMA",  "XI'AN COY MAHN","KARNAK","KA-ZAR", "KENNY ‘KING KONG’ MCFARLANE", "KINGPIN", "WILSON FISK", "KRAVEN THE HUNTER", "SERGEI KRAVINOFF", "KREE", "KORG", "KATE BISHOP", "LADY LARK", "LAYLA MILLER", "STAN LEE","LEECH","LEVIATHAN", "LIEBERMAN", "LILANDRA NERAMANI", "LIZARD", "CURTUS CONNORS", 
+"LOCKJAW", "LOKI", "LONGSHOT", "ARTHUR CENTINO", "LUKE CAGE", 
+"LIBERATOS", "MADAME WEB", "MAGICIAN", "ELLIOT BOGGS", "MAGNETO", 
+"ERIK LENSHERR", "MARVEL GIRL", "JEAN GREY", "MAN-APE", 
+"M'BAKU", "MANDARIN", "MAN-THING", "TED SALLIS", "MANTIS","MARK RAXTON", "MARY PARKER", "MARY JANE WATSON", "MASTER MENCE", "EMIL BURBANK", "MASTERMIND", "MAXIMUS", "MAY PARKER", "MEPHISTO", 
+"MILES WARREN", "CAPTAIN WINTER", "MILES MORALES", "MISTER FANTASTIC", "REED RICHARDS", "MR. ROSE", "MS. MARVEL", "GEORGE TARLETON", "MOJO ADAMS", 
+"MOLE MAN", "ARTHUR MOLEKEVIC", "MORBIUS", "VLAD TEPES DRACULA", 
+"MOIRA MACTAGGERT", "MORLOCKS", "MONTANA", "MOONDRAGON", "HEATHER DOUGLAS", "MEDUSA", "MOON KNIGHT", "MOONKNIGHT", "MARC SPECTOR", 
+"MULTIPLE MAN", "JAMES MADROX", "MYSTERIO",  "QUENTIN BECK", 
+"MYSTIQUE",  "RAVEN DARKHÖLME", "NAMOR", "NATHANIEL RICHARDS", 
+"NERD HULK", "NEBULA", "THE NEW SENTINELS","NIGHTMARE", "NIGHTCRAWLER", "KURT WAGNER", "NIGHTHAWK", "KYLE RICHMOND", 
+"NIHIL", "NORTHSTAR", "JEAN-PAUL BEAUBIER", "NOVA","RICK JONES", 
+"NUKE", "ODIN", "OMEGA RED", "THE ONE ABOVE ALL", "ONSLAUGHT", "ORB WEAVER", "OWL", "OX", "BRUNO SANCHEZ", "PALADIN", "MARC SPECTOR", "PANDORA", "MARGARET WATSON", "PENULTIMATE", "ULTIMATE MARVEL", "PERUN", "PETE WISDOM", "PHIL COULSON", "AGENT COULSON", 
+"SHIELD", "S.H.I.E.L.D.", "PHOENIX FORCE", "PHOEBE MCALLISTER", "PILEDRIVER", "POLARIS", "LORNA DANE", "POWER MAN", "POWER PRINCESS", "PRIMAL SCREAMER", "PRINCESS PYTHON", "THE PRINCIPAL", 
+"LARRY JONES","PROWLER", "AARON DAVIS", "PROTEUS", "DAVID XAVIER", "PSYLOCKE", "ELISABETH ‘BETTY’ BRADDOCK", "PYRO", "PEPPER POTTS", "THE PUNISHER", "FRANK CASTLE", "PETER PARKER", "SPIDERMAN","SPIDER MAN", "SPIDER-MAN", "PETER QUILL", "PIETRO MAXIMOFF", "QUASAR", "QUICKSILVER", "PIETRO LENSHERR", "RAGE", "RALPH BOHNER", "WANDAVISION", "RED SKULL", "RED GHOST", "RED GUARDIAN", "RED WASP", "PETRA LASKOV", "RHINO", "RHONA BURCHILL", "ROBBIE BURCHILL", "RICHARD PARKER", "RINGER", "ANTHONY DAVIS", "ROBBIE ROBERTSON", "ROCKET RACCOON", "ROGUE", "RONAN THE ACCUSER", "SABRA", "SABRETOOTH", "VICTOR CREED", "SAMUAL STERNS", "SANDMAN", "FLINT MARKO", "SAQUATCH", "SAM BULLIT", "SCARLET WITCH", "WANDA LENSHERR", "SCHIZOID MAN", "SCORPION", "SENTINELS", "SENTRY", "SHADOWCAT", "KITTY PRYDE", "SHANG-CHI", "SHAMAN", "SHINOBI SHAW", "SHAPE", "SHARON CARTER", "PEGGY CARTER", "AGENT PEGGY", "MARGARET CARTER", "SKY-EATER", "SKRULL", "SEBASTIAN SHAW", "SPIDER-GIRL", "MAY PARKER", "SPIDER-WOMAN", "SPIDERWOMAN", "JESSICA DREW", "SHOCKER", "STORM", "STAR-LORD", "PETER JASON QUILL", "SYLVIE/LADY LOKI", "TANDY BOWEN",  "TARANTULA", "’DUM-DUM’ DUGAN", "THADDEUS E. ‘THUNDERBOLT’ ROSS", "THANOS", "THING", "BENJAMIN ‘BEN’ J. GRIMM", "THOR", "THUNDERBALL", "TINKERER", "ELIJAH STERN", "TITANIUM MAN", "TOAD", "TOM THUMB", "TREY LANGSTROM", "TRITO", "TYRONE CASH", "ULTRON", "UNUS", "BEN URICH", "UNICORN", "VALKYRIE", "VAL COOPER", "VANISHER", "VENOM", "EDDIE BROCK", "VINDICATOR", "JOHN WRAITH", "VISION", "VULTURE", "BLACKIE DRAGO", "VENGEANCE", "VOLSTAGG", "WASP", "JANET PYM", "WHIZ KID", "MATSUYA TAKI", "WILDPACK", "WINTER SOLDIER", "JAMES ‘BUCKY’ BUCHANAN BARNES", "WOLVERINE", "LOGAN", "JAMES HOWLETT", "JIMMY WOO", "WOODY", "JAMES RHODES", "WONG", "WHIZZER", "WRECKER", "WOLFSBANE", "RAHNE SINCLAIR", "WARLOCK", "X-23", "KINNEY LAURA", "XORN", "KUAN-YI", "X-MAN", "X-MEN", "YELLOWJACKET",  "DARREN CROSS", "YONDU", "YELENA BELOVA", "ZABU", "ZERO", "ZORN", "SHEN-YI", "ZEMO"
  ];
-
-console.log (marvelCharacters);
-
-
-
-
 
 // API key for OMBD
 var omdbKey = "8f91bbc4";
@@ -100,13 +94,8 @@ function storageAppender() {
   }
 }
 
+// previous search btn running storage appender which searches the last search in local storage
 previousSearchBtn.addEventListener("click", storageAppender);
-
-
-
-// function storageChecker() {
-
-// }
 
 
 // search button with event listener
@@ -118,35 +107,21 @@ searchBtn.addEventListener("click", (event) => {
   const selectedCategory = searchParameter.value;
 
   //   mainPage.classList.add('hide')
-
-
-  for (var i = 0; i < marvelCharacters.length; i++) {
-
-    if (userSearch.includes(marvelCharacters)); 
-
-    debugger
-   
+  if (!marvelCharacters.includes(userSearch.toUpperCase())) {
+    console.log('Search a Marvel key term!')
+    return
+  }
 
     if (selectedCategory === "mcu") {
       // removes main page elements NO ANIMATION !!!
       mainPage.remove();
-      mcuFetcher(userSearch)
-      break
+      mcuFetcher(userSearch) 
     } else if (selectedCategory === "comics") {
       mainPage.remove();
       comics(userSearch)
-      break
-    } 
-    //   function here
-    else {
-      console.log("Please select an option!");
-      break
+    } else {
+      console.log("Please select a Marvel Search word or check your spelling! Hint Spider-Man");
     }
-
-
-
-
-  }
 
   
   
@@ -252,7 +227,6 @@ function comicFetcher(characterID) {
     `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?apikey=${marvelKey}`
   )
     .then(function (response) {
-      debugger;
       return response.json();
     })
     .then(function (comicFetch) {
