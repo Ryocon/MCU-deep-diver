@@ -1,40 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Marvel:wght@700&display=swap');
+/* imported fonts from google */
+/* fonts chosen are themeatic with one being named 'marvel' and the other looking similar to the marvel logo */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Marvel:wght@700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap");
 
+/* universial selector to font, background and text colour */
 * {
   background-color: #015975;
   font-family: marvel;
   color: white;
 }
 
+/* set to make the user input box white */
+/* styling for the black text is inline using tailwind */
 #user-input {
   background-color: white;
 }
 
+/* similar styling throughout all the elements to make a consistent theme */
 h1 {
-  font-family: 'Anton', sans-serif; 
+  font-family: "Anton", sans-serif;
   --box-shadow-color: rgb(9, 8, 1);
   box-shadow: 1px 2px 3px var(--box-shadow-color);
-  background-color: #ED1D24;
+  background-color: #ed1d24;
 }
 
+/* hover styling for all main page elements and buttons throughout the webpage */
 h1:hover {
   transform: translate(-0.05em, -0.05em);
   transition: all 0.1s ease 0s;
   box-shadow: 0.1em 0.1em;
 }
-
-/* #search-btn {
-  background: #ed1d24;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
-} */
 
 button:hover {
   transform: translate(-0.05em, -0.05em);
@@ -45,43 +41,39 @@ button:hover {
 button {
   --box-shadow-color: rgb(9, 8, 1);
   box-shadow: 1px 2px 3px var(--box-shadow-color);
-  background-color: #ED1D24;
-  /* box-shadow: 0.1em 0.1em; */
+  background-color: #ed1d24;
 }
 
+/* colour selected from the marvel logo set in local css as setting in tailwind was complex */
 #previous-search-btn {
-  background-color: #ED1D24;
+  background-color: #ed1d24;
 }
 
 #search-btn {
-  background-color: #ED1D24;
+  background-color: #ed1d24;
 }
 
 #searchAgainBtn {
-  background-color: #ED1D24;
+  background-color: #ed1d24;
 }
 
 #load-more-btn {
-  background-color: #ED1D24;
+  background-color: #ed1d24;
 }
 
 i {
-  background-color: #ED1D24;
-
+  background-color: #ed1d24;
 }
-/* button {
-  box-shadow: 0.1em 0.1em;
-} */
 
+/* movement added to button clicks */
 button:active {
   transform: translate(0.05em, 0.05em);
-  /* box-shadow: 0.05em 0.05em ; */
 }
 
 select {
---box-shadow-color: rgb(9, 8, 1);
+  --box-shadow-color: rgb(9, 8, 1);
   box-shadow: 1px 2px 3px var(--box-shadow-color);
-  background-color: #ED1D24;
+  background-color: #ed1d24;
 }
 
 select:hover {
@@ -90,38 +82,12 @@ select:hover {
   box-shadow: 0.1em 0.1em;
 }
 
+/* class to display none */
 .hide {
   display: none;
 }
 
-/* .MDPlogo {
-  font-size: 22pt;
-} */
-
-/* .backButton {
-  font-family: "Signika", sans-serif;
-  font-size: 1.5rem;
-  background: transparent;
-  align-items: right;
-} */
-
-/* .MDPlogo a:hover {
-  color: white;
-  text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
-  transition: all 0.5s ease;
-} */
-
-/* header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 5px 2%;
-  /* background-color: #ed1d24; */
-/* background-image: linear-gradient(rgb(186, 61, 61), red);
-  /* border-radius: 0.5rem; */
-/* flex-direction: row;
-} */
-
+/* styling for the main banner created here instead of tailwind */
 .banner-area {
   background-image: url("https://images3.alphacoders.com/232/thumb-1920-232145.jpg");
   background-size: cover;
@@ -129,44 +95,12 @@ select:hover {
   top: 100px;
   height: 150px;
   width: 100%;
-  /* margin-top: 3px; */
   position: inherit;
-  opacity: 0.3;
+  opacity: 0.4;
   border-radius: 0.5rem;
 }
 
-.headerContainer {
-  display: flex;
-  justify-content: center;
-}
-
-/* .searchAgainBtnStyle {
-  background: #ed1d24;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
-  display: flex;
-  position: relative;
-} */
-
-/* .previousSearchBtnStyle {
-  background: #ed1d24;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
-  display: flex;
-  position: relative;
- } */
-
-/* new alert */
+/* styling for the error modal to make sure colours are correct */
 .alert-class {
   margin-top: 1rem;
   padding: 10px;
@@ -174,78 +108,60 @@ select:hover {
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: #ED1D24;
-  color: #ED1D24;
+  border-color: #ed1d24;
+  color: #ed1d24;
   margin-bottom: 15px;
   font-weight: bold;
-
 }
 
+/* targetted display none */
 #searchAgainBtn {
   display: none;
 }
 
-
+/* hover effects for cards once displayed */
 .card:hover {
   transform: translate(-0.05em, -0.05em);
   transition: all 0.1s ease 0s;
   box-shadow: 0.1em 0.1em;
 }
 
-
+/* animations for elements on the main page */
+/* the animations are meant to be themeatic in that the elements are 'assembling to reference the avengers films and comics */
 .blinkLeft {
-  /* animation: showup 7s infinite; */
   animation: slidein 5s;
-  /* animation: reveal 7s infinite; */
 }
 
 .blinkRight {
-  /* animation: showup 7s infinite; */
   animation: slideinright 5s;
-  /* animation: reveal 7s infinite; */
 }
 
 .blinkRightTwo {
-  /* animation: showup 7s infinite; */
   animation: slideinright 4s;
-  /* animation: reveal 7s infinite; */
 }
 
 .blinkBottom {
   animation: slideinbottom 8s;
-  /* animation: fadein 4s; */
 }
-
-
 
 @keyframes slidein {
   0% {
     margin-left: -1600px;
   }
-  /* 35% {
-    margin-left: -200px;
-  } */
+
   22% {
     margin-left: 0px;
   }
-  /* 100% {
-    margin-left: 0px;
-  } */
 }
 
 @keyframes slideinright {
   0% {
     margin-right: -1600px;
   }
-  /* 20% {
-    margin-right: -1000px;
-  } */
+
   20% {
     margin-right: 0px;
   }
-  /* 100% {
-    margin-right: 0px;
-  } */
 }
 
 @keyframes slideintop {
@@ -255,27 +171,36 @@ select:hover {
   20% {
     margin-top: -800px;
   }
-  /* 35% {
-    margin-top: 0px;
-  } */
-  /* 100% {
-    margin-top: 0px;
-  } */
 }
 
 @keyframes slideinbottom {
   0% {
     margin-bottom: 1000px;
   }
-  /* 20% {
-    margin-right: -1000px;
-  } */
+
   20% {
     margin-bottom: 0px;
-}
+  }
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeinbanner {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
 }

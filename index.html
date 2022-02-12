@@ -7,60 +7,65 @@
     <title>MCU Deep Diver</title>
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- fontawesome icons -->
+    <!-- fontawesome icons cdn -->
     <script src="https://kit.fontawesome.com/0d1f711fbd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
+<!-- page header using tailwind flex classes -->
 <header class="flex justify-center">
-    <!-- <a class="backButton">Back</a> -->
+    <!-- searchAgainButton starting with display none until the page moves upon click event listener -->
     <button id="searchAgainBtn" class="m-2 pt-2 pb-2 p-2 pl-1.5 border-solid border-black border-2 rounded-lg ml-1 h-10 w-30">Search Again <i class=" ml-1 fa-solid fa-arrows-rotate"></i></button>
+
 </header>
 
-<!-- banner below of translucent marvel pic-->
-<div class="banner-area"></div>
+<!-- banner below of translucent marvel image-->
+<div class="banner-area fadeinbanner"></div>
 
 <!-- initial landing page for searching -->
 <div id="main-page" class="flex flex-col items-center pt-40">
-    
-    <!-- flex for logo -->
-    <!-- <img id="marvel-logo" class="p-2" width="200px" height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" alt="marvel logo">  -->
 
+    <!-- h1 title with inline styling and animation from local css -->
     <h1 class="flex shrink text-white ml-4  w-18 pl-2 pr-2 p-2 m-2  md:text-6xl border-solid sm:text-2xl border-black border-2 rounded-lg blinkRight">MARVEL DEEP DIVER</h1>
     
+    <!-- userinput area -->
     <input class="text-black border-solid border-black border-2 rounded-lg p-1" type="text" name="search" id="user-input">
 
 <div class="flex flex-row m-1">
 
+    <!-- select with options to allow the javascript searches to match the parameters set -->
     <select class="m-2 pt-2 pb-2 pl-1.5 border-solid border-black border-2 rounded-lg ml-1 h-10 w-20  blinkLeft" name="search-parameters" id="search-params">
         <option value="placeholder">Options</option>
         <option value="mcu">MCU</option>
         <option value="comics">Comics</option>
     </select>
     
+    <!-- search button with event listener that appends and removes elements from the page -->
     <button id="search-btn" type="submit" class="m-1.25 mt-2 pt-2 pb-1 h-10 w-20 border-solid border-black border-2 rounded-lg ">Search <i class="fa-solid fa-chevron-right"></i></button>
     
 </div>
 
+    <!-- previous search button that uses data from local storage -->
     <button id="previous-search-btn" type="submit" class="m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg blinkRightTwo ">Previous Search <i class="fa-solid fa-arrows-rotate"></i></button>
 
-    <!-- new alert -->
+    <!-- modal alert to show that the user input does not match a search based on the marvel character array -->
     <div id="alert"></div>
 
 
 </div>
 
-<!-- test -->
 <!-- blank div for rendering our cards upon search -->
 <div id="card-page" class="flex flex-wrap justify-center">
 
 
 </div>
  
+<!-- div to control positioning of the load-more-btn -->
 <div class="flex justify-center">
 
-<button id='load-more-btn' class="hide">Load More</button> 
+    <!-- load-more-btn starting with a class that displays none. Styling is added in javascript upon event listener  -->
+    <button id='load-more-btn' class="hide">Load More</button> 
 
 </div>
 
@@ -68,7 +73,7 @@
 
 
 
-
+<!-- link to javascript -->
 <script src="assets/javascript/script.js"></script>
 
 </body>

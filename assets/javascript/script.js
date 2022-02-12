@@ -1,4 +1,4 @@
-// Marvel Characters
+// Marvel Characters stored in an array which will match to userinput to make sure the user is searching correctly
 
 var marvelCharacters = [
   "3D MAN”, “3-D MAN”, “ANT-MAN”, “ANTMAN”, “ANT MAN”, “ABOMINATION”, “CHANG LAM”, “ABRAHAM CORNELIUS”, “ABRAHAM ERSKINE”, “ADRIAN TOOMES”, “AGATHA HARKNESS”, “AIM AGENTS”, “ALPHA DOG”, “AMPHIBIAN”, “SQUADRON SUPREME”, “ANACONDA”, “BLANCHE SITZNSKI”, “SITZ SKI BLANCHE”, “ANCIENT ONE”, “APOCALYPSE”, “ARCADE”, “ARCANNA”, “ARCANNA JONES”, “ARNIM ZOLA”, “ANGEL”, “WARREN WORTHINGTON III”, “ARSENAL”, “ASP”, “CLEO NEFERTITI”, “ASSEMBLE”, “BALDER”, “BANSHEE”, “SEAN CASSIDY”, “BARON ZEMO”, “BARON STRUCKER”, “BEETLE”, “BEN PARKER”, “BEN REILLY”, “BETTY BRANT”, “BETTY ROSS”, “LUCAS BISHOP”, “BLACK BOLT”, “BLACK CAT”, “FELICA HARDY”, “JACK TERR BLACK”, “BLACK KNIGHT”, “DANE WHITMAN”, “BLACK MAMBA”, “TANDY SEALY”, “BLACK PANTHER”, “T CHALLA UDAKU”, “BLACK TALON”, “MONICA CHANG”, “BLACK WIDOW",
@@ -521,17 +521,23 @@ var cardPage = document.getElementById("card-page");
 // main page for removing + adding classes
 var mainPage = document.getElementById("main-page");
 
+// load-more-btn selector
 var loadMoreBtn = document.getElementById("load-more-btn");
 
+// counter used for iterations set at global
 var counter = 0;
 
+// global variable for the characterID so it can be used in multiple functions
 var currentCharacterId = undefined;
 
+// global variable for the userinput to allow cross function use
 var userSearch = undefined;
 
+// global variable for the selected category to allow cross function use
 var selectedCategory = undefined;
 
-// !!!!! Get previous searches from local storage - if they dont exist, create empty array to assign future searchs
+// local storage setting function that uses the user search and the selected category as a key and value pair
+// they are then placed into an array to pull from in a later function
 function storageSetter(userSearch, selectedCategory) {
   searchParams = { userSearch, selectedCategory };
   var previousSearches =
@@ -543,12 +549,13 @@ function storageSetter(userSearch, selectedCategory) {
   );
 }
 
-// GET THE STUFF
+// function for getting items from local storage
 function storageGetter() {
   return JSON.parse(localStorage.getItem("previous-search-history"));
 }
 
-// square brackets to get the stuff -1
+// function for appending the previous-search-history, the last search in the array, to the page using the pop method
+// it will also log no previous searches if nothing is stored
 function storageAppender() {
   var previousSearches = storageGetter();
   var mostRecentSearch = previousSearches.pop();
@@ -564,7 +571,10 @@ function storageAppender() {
     return;
   }
   loadMoreBtn.removeAttribute("hide");
-  loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;");
+  loadMoreBtn.setAttribute(
+    "class",
+    "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;"
+  );
 }
 
 // previous search btn running storage appender which searches the last search in local storage
@@ -579,25 +589,30 @@ searchBtn.addEventListener("click", (event) => {
 
   selectedCategory = searchParameter.value;
 
+  // counter is reset to zero when this function is called
   counter = 0;
 
-  //   mainPage.classList.add('hide')
   if (!marvelCharacters.includes(userSearch.toUpperCase())) {
     addInvalidSearchEl();
     return;
   }
   if (selectedCategory === "mcu") {
-    // removes main page elements NO ANIMATION !!!
+    // removes main page elements
     mainPage.remove();
     mcuFetcher(userSearch);
     loadMoreBtn.removeAttribute("hide");
-    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;");
+    loadMoreBtn.setAttribute(
+      "class",
+      "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;"
+    );
   } else if (selectedCategory === "comics") {
     mainPage.remove();
     comics(userSearch);
-    // added button !!!
     loadMoreBtn.removeAttribute("hide");
-    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;");
+    loadMoreBtn.setAttribute(
+      "class",
+      "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;"
+    );
   } else {
     console.log(
       "Please select a Marvel Search word or check your spelling! Hint: Spider-Man"
@@ -605,28 +620,31 @@ searchBtn.addEventListener("click", (event) => {
   }
 
   storageSetter(userSearch, selectedCategory);
-
 });
 
 // invalid search notification on main page
 function addInvalidSearchEl() {
   let alert = document.querySelector("#alert");
 
-  let langs = [
+  // named 'spidermanError' as this was an edge case in the usage we found using the Marvel API in that Spider-Man is not a valid search term in the API
+  let spidermanError = [
     "Please select a Marvel Search word or check your spelling! Hint Spider-Man!",
   ];
 
-  let nodes = langs.map((lang) => {
+  // this is what appends the error to the page
+  // cleared upon refresh or successful search
+  let nodes = spidermanError.map((spidermanError) => {
     let alertEl = document.createElement("h1");
     alertEl.setAttribute("class", "alert-class");
-    alertEl.textContent = lang;
+    alertEl.textContent = spidermanError;
     return alertEl;
   });
 
   alert.append(...nodes);
 }
 
-// prototype fucntion for multiple film search cards
+// function for pulling from the OMDB API and appending the data in the card format
+// the function uses math.min to append 9 results to the page using a for loop to iterate each returned data element so each card is different
 function mcuFetcher(userSearch) {
   fetch(
     `http://www.omdbapi.com/?s=${userSearch}&page=${
@@ -643,9 +661,7 @@ function mcuFetcher(userSearch) {
 
       searchAgainBtn.style.display = "flex";
 
-      console.log(noOfIterations);
       for (var i = 0; i < noOfIterations; i++) {
-        // currently doesn't like the search[i] bit below
         var film = filmFetch.Search[i];
 
         let filmPoster = film.Poster;
@@ -681,7 +697,7 @@ function mcuFetcher(userSearch) {
     });
 }
 
-// THIS FINDS THE CHARACTER ID AND PARSES IT INTO THE comicFetcher function
+// this function finds the characterID and parses it into the comicFetcher function
 function comics(userSearch) {
   fetch(
     `http://gateway.marvel.com/v1/public/characters?name=${userSearch}&apikey=${marvelKey}`
@@ -705,7 +721,8 @@ function comics(userSearch) {
     });
 }
 
-// THIS FETCHES THE COMICS AND APPENDS THEM TO DA PAGE
+// this function parses the characterID from the first Marvel API pull to then be able to pull data from the comics and append them to the page
+// math.min and a for loop is also used here for the same purpose as mcuFetcher
 function comicFetcher(characterID) {
   fetch(
     `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?limit=9&offset=${counter}&apikey=${marvelKey}`
@@ -724,7 +741,6 @@ function comicFetcher(characterID) {
         let comicCover =
           character.thumbnail.path + "." + character.thumbnail.extension;
         let comicDate = character.dates[0].date;
-        console.log("On sale date: " + comicDate);
         let comicPages = character.pageCount;
 
         const cardRender = document.createElement("div");
@@ -761,7 +777,8 @@ function comicFetcher(characterID) {
     });
 }
 
-// !!!! Load more button function
+// load more button function that pushes the value of counter up by 9 each time it is clicked
+// this appends more cards to the page by calling the selected function again which adds to the functions local scope value of counter to iterate the value of offset to make sure the same data is not being read
 loadMoreBtn.addEventListener("click", function () {
   counter += 9;
 
@@ -772,12 +789,9 @@ loadMoreBtn.addEventListener("click", function () {
   }
 });
 
-
+// event listener attached to the searchAgainBtn which refreshes the page and reloads the main page elements
+// users can still use previousSearch as the data is saved in local storage
 searchAgainBtn.addEventListener("click", function () {
-  // document.removeAttribute('hide')
   cardPage.remove();
-  // mainPage.append();
   window.location.reload();
 });
-
-
