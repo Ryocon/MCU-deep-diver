@@ -16,6 +16,7 @@ h1 {
   font-family: 'Anton', sans-serif; 
   --box-shadow-color: rgb(9, 8, 1);
   box-shadow: 1px 2px 3px var(--box-shadow-color);
+  background-color: #ED1D24;
 }
 
 h1:hover {
@@ -44,9 +45,30 @@ button:hover {
 button {
   --box-shadow-color: rgb(9, 8, 1);
   box-shadow: 1px 2px 3px var(--box-shadow-color);
+  background-color: #ED1D24;
   /* box-shadow: 0.1em 0.1em; */
 }
 
+#previous-search-btn {
+  background-color: #ED1D24;
+}
+
+#search-btn {
+  background-color: #ED1D24;
+}
+
+#searchAgainBtn {
+  background-color: #ED1D24;
+}
+
+#load-more-btn {
+  background-color: #ED1D24;
+}
+
+i {
+  background-color: #ED1D24;
+
+}
 /* button {
   box-shadow: 0.1em 0.1em;
 } */
@@ -59,6 +81,7 @@ button:active {
 select {
 --box-shadow-color: rgb(9, 8, 1);
   box-shadow: 1px 2px 3px var(--box-shadow-color);
+  background-color: #ED1D24;
 }
 
 select:hover {
@@ -151,8 +174,8 @@ select:hover {
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: rgb(185 28 28);
-  color: rgb(185 28 28);
+  border-color: #ED1D24;
+  color: #ED1D24;
   margin-bottom: 15px;
   font-weight: bold;
 
@@ -163,23 +186,37 @@ select:hover {
 }
 
 
+.card:hover {
+  transform: translate(-0.05em, -0.05em);
+  transition: all 0.1s ease 0s;
+  box-shadow: 0.1em 0.1em;
+}
+
+
 .blinkLeft {
   /* animation: showup 7s infinite; */
-  animation: slidein 6s;
+  animation: slidein 5s;
   /* animation: reveal 7s infinite; */
 }
 
 .blinkRight {
   /* animation: showup 7s infinite; */
-  animation: slideinright 6s;
+  animation: slideinright 5s;
   /* animation: reveal 7s infinite; */
 }
 
 .blinkRightTwo {
   /* animation: showup 7s infinite; */
-  animation: slideinright 5s;
+  animation: slideinright 4s;
   /* animation: reveal 7s infinite; */
 }
+
+.blinkBottom {
+  animation: slideinbottom 8s;
+  /* animation: fadein 4s; */
+}
+
+
 
 @keyframes slidein {
   0% {
@@ -224,4 +261,21 @@ select:hover {
   /* 100% {
     margin-top: 0px;
   } */
+}
+
+@keyframes slideinbottom {
+  0% {
+    margin-bottom: 1000px;
+  }
+  /* 20% {
+    margin-right: -1000px;
+  } */
+  20% {
+    margin-bottom: 0px;
+}
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

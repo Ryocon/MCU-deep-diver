@@ -563,6 +563,8 @@ function storageAppender() {
     console.log("No previous search!");
     return;
   }
+  loadMoreBtn.removeAttribute("hide");
+  loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;");
 }
 
 // previous search btn running storage appender which searches the last search in local storage
@@ -589,16 +591,16 @@ searchBtn.addEventListener("click", (event) => {
     mainPage.remove();
     mcuFetcher(userSearch);
     loadMoreBtn.removeAttribute("hide");
-    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg bg-red-700");
+    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;");
   } else if (selectedCategory === "comics") {
     mainPage.remove();
     comics(userSearch);
     // added button !!!
     loadMoreBtn.removeAttribute("hide");
-    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg bg-red-700");
+    loadMoreBtn.setAttribute("class", "m-1 ml-1.5 h-10 w-40 border-solid border-black border-2 rounded-lg background-color: #ED1D24;");
   } else {
     console.log(
-      "Please select a Marvel Search word or check your spelling! Hint Spider-Man"
+      "Please select a Marvel Search word or check your spelling! Hint: Spider-Man"
     );
   }
 
@@ -657,11 +659,11 @@ function mcuFetcher(userSearch) {
 
         cardRender.setAttribute(
           "class",
-          "flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1"
+          "flex flex-col flex-initial max-w-xl m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1 border-solid border-black border-2 card blinkBottom"
         );
-        filmPosterEl.setAttribute("class", "p-1 mt-2");
-        filmTitleEl.setAttribute("class", "p-1 mt-2");
-        filmYearEl.setAttribute("class", "p-1 mt-2");
+        filmPosterEl.setAttribute("class", "p-1 mt-2 bg-slate-400");
+        filmTitleEl.setAttribute("class", "p-1 mt-2 bg-slate-400");
+        filmYearEl.setAttribute("class", "p-1 mt-2 bg-slate-400");
 
         filmPosterEl.setAttribute("src", filmPoster);
         filmPosterEl.setAttribute("class", "rounded-lg");
@@ -733,20 +735,16 @@ function comicFetcher(characterID) {
 
         cardRender.setAttribute(
           "class",
-          "flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1"
+          "flex flex-col flex-initial max-w-sm m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1 border-solid border-black border-2 card blinkBottom"
         );
-        comicTitleEl.setAttribute("class", "p-1 mt-2");
-        comicDateEl.setAttribute("class", "p-1");
-        comicPagesEl.setAttribute("class", "p-1");
+        comicTitleEl.setAttribute("class", "p-1 mt-2 bg-slate-400");
+        comicDateEl.setAttribute("class", "p-1 mt-2 bg-slate-400");
+        comicPagesEl.setAttribute("class", "p-1 mt-2 bg-slate-400");
 
         comicCoverEl.setAttribute("src", comicCover);
         comicCoverEl.setAttribute("class", "rounded-lg");
 
         // appender
-        cardRender.setAttribute(
-          "class",
-          "flex flex-col flex-initial max-w-md m-5 ml-8 bg-slate-400 p-5 rounded-lg text-lg decoration-1"
-        );
 
         comicTitleEl.textContent = "Title: " + comicTitle;
         comicDateEl.textContent = "On sale date: " + comicDate;
