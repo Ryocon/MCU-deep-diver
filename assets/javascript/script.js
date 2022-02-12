@@ -700,7 +700,7 @@ function mcuFetcher(userSearch) {
 // this function finds the characterID and parses it into the comicFetcher function
 function comics(userSearch) {
   fetch(
-    `http://gateway.marvel.com/v1/public/characters?name=${userSearch}&apikey=${marvelKey}`
+    `https://gateway.marvel.com/v1/public/characters?name=${userSearch}&apikey=${marvelKey}`
   )
     .then(function (response) {
       return response.json();
