@@ -647,7 +647,7 @@ function addInvalidSearchEl() {
 // the function uses math.min to append 9 results to the page using a for loop to iterate each returned data element so each card is different
 function mcuFetcher(userSearch) {
   fetch(
-    `http://www.omdbapi.com/?s=${userSearch}&page=${
+    `https://www.omdbapi.com/?s=${userSearch}&page=${
       counter / 9 + 1
     }&apikey=${omdbKey}`
   )
