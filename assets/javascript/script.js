@@ -725,7 +725,7 @@ function comics(userSearch) {
 // math.min and a for loop is also used here for the same purpose as mcuFetcher
 function comicFetcher(characterID) {
   fetch(
-    `http://gateway.marvel.com/v1/public/characters/${characterID}/comics?limit=9&offset=${counter}&apikey=${marvelKey}`
+    `https://gateway.marvel.com/v1/public/characters/${characterID}/comics?limit=9&offset=${counter}&apikey=${marvelKey}`
   )
     .then(function (response) {
       return response.json();
